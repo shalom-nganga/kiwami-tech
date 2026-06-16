@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Kiwami Tech — Africa's QA Powerhouse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700;1,9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0d1b3e;--navy2:#142248;--card:#182d58;--gold:#f5c518;--gold2:#d4a800;--teal:#0d9488;--white:#fff;--bg:#f7f8fc;--text:#111827;--mid:#4b5563;--muted:#9ca3af;--border:#e5e7eb;--J:'Plus Jakarta Sans',sans-serif;--F:'Fraunces',serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--J);background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+/* TICKER */
+.ticker{background:var(--gold);overflow:hidden;height:34px;display:flex;align-items:center}
+.ttrack{display:flex;animation:tick 38s linear infinite;white-space:nowrap}
+.ttrack span{font-size:.71rem;font-weight:700;color:var(--navy);padding:0 2.5rem}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+.nwrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;padding:0 2rem}
+.logo{font-family:var(--J);font-weight:800;font-size:.92rem;color:var(--navy);text-decoration:none;letter-spacing:.07em;white-space:nowrap;margin-right:2rem;flex-shrink:0}
+.nmenu{display:flex;align-items:center;flex:1}
+.nl{font-size:.78rem;font-weight:600;color:var(--mid);text-decoration:none;padding:.55rem .75rem;white-space:nowrap;transition:color .15s;position:relative;display:flex;align-items:center;gap:3px}
+.nl:hover{color:var(--navy)}
+.nl.active{color:var(--navy)}
+.nl.active::after{content:'';position:absolute;bottom:0;left:.75rem;right:.75rem;height:2px;background:var(--gold);border-radius:2px}
+.ndrop{position:relative}
+.ndrop .arr{font-size:.48rem;opacity:.5;transition:transform .2s;margin-left:1px}
+.ndrop:hover>.nl{color:var(--navy)}.ndrop:hover .arr{transform:rotate(180deg)}
+.ndd{position:absolute;top:calc(100% + 4px);left:0;min-width:215px;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);padding:.4rem 0;opacity:0;pointer-events:none;transform:translateY(-5px);transition:all .17s;z-index:600}
+.ndrop:hover .ndd{opacity:1;pointer-events:all;transform:translateY(0)}
+.ndd a{display:block;padding:.52rem 1.1rem;font-size:.78rem;font-weight:500;color:var(--text);text-decoration:none;transition:all .12s}
+.ndd a:hover{background:var(--bg);color:var(--navy);padding-left:1.4rem}
+.nhire{margin-left:auto;background:var(--navy);color:var(--white);font-family:var(--J);font-weight:700;font-size:.78rem;padding:.44rem 1.15rem;border-radius:100px;text-decoration:none;border:2px solid var(--navy);transition:all .15s;white-space:nowrap;flex-shrink:0}
+.nhire:hover{background:transparent;color:var(--navy)}
+
+/* HERO */
+.hero{background:var(--navy);overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;top:-120px;left:35%;width:500px;height:500px;background:radial-gradient(circle,rgba(245,197,24,.06),transparent 65%);pointer-events:none}
+.hero-in{max-width:1300px;margin:0 auto;padding:5rem 2rem 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem;align-items:flex-start;min-height:90vh}
+.h-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:.3rem .95rem;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;margin-bottom:1.5rem;width:fit-content}
+.h-badge .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0}
+.hero h1{font-family:var(--J);font-weight:800;font-size:clamp(2.6rem,4.5vw,4.2rem);line-height:1.05;color:var(--white);letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero h1 em{font-family:var(--F);font-style:italic;color:var(--gold);font-weight:700;display:block}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.55);max-width:440px;line-height:1.78;margin-bottom:2.25rem}
+.hero-btns{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-gold{background:var(--gold);color:var(--navy);font-family:var(--J);font-weight:700;font-size:.88rem;padding:.65rem 1.5rem;border-radius:9px;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:5px;border:none;cursor:pointer}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.ghost-w{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .15s}
+.ghost-w:hover{color:var(--white)}
+/* QUICK ACCESS PANEL */
+.qa-panel{background:var(--card);border-top-left-radius:20px;border-top-right-radius:20px;border:1px solid rgba(255,255,255,.07);border-bottom:none;padding:1.5rem 1.5rem 0;position:relative;z-index:1}
+.qa-lbl{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center;margin-bottom:1.1rem}
+.qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:12px;overflow:hidden}
+.qa-item{background:var(--card);padding:1.25rem 1.35rem;display:flex;flex-direction:row;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:background .15s}
+.qa-item:hover{background:#1e3870}
+.qa-ic{font-size:1.8rem;flex-shrink:0}
+.qa-t{font-family:var(--J);font-weight:700;font-size:.9rem;color:var(--white);line-height:1.2;display:block;margin-bottom:3px}
+.qa-s{font-size:.72rem;color:rgba(255,255,255,.42);line-height:1.35;display:block}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--border)}
+.sc{padding:2.25rem 1.5rem;text-align:center;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.sc:last-child{border-right:none}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.sc.sn{background:var(--navy)}.sc.sn::after{background:var(--gold)}
+.sc.sg{background:var(--gold)}.sc.sg::after{background:var(--navy)}
+.sc.sw{background:var(--white)}.sc.sw::after{background:var(--navy)}
+.sc.st{background:#f0fdfa}.sc.st::after{background:var(--teal)}
+.snum{font-family:var(--J);font-weight:800;font-size:2.2rem;line-height:1;color:var(--navy)}
+.sc.sn .snum{color:var(--gold)}.sc.sg .snum{color:var(--navy)}.sc.st .snum{color:var(--teal);font-size:1.6rem}
+.slbl{font-size:.74rem;color:var(--muted);margin-top:5px}
+.sc.sn .slbl{color:rgba(255,255,255,.45)}.sc.sg .slbl{color:rgba(13,27,62,.62)}.sc.st .slbl{color:var(--teal);font-size:.68rem}
+
+/* SHARED */
+.sec{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+.alt{padding:5rem 2rem;background:var(--bg)}
+.alt .in,.dark .in{max-width:1200px;margin:0 auto}
+.dark{padding:5rem 2rem;background:var(--navy)}
+.eye{display:flex;align-items:center;gap:8px;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem}
+.eye::before{content:'';width:20px;height:2px;background:var(--navy);flex-shrink:0;border-radius:2px}
+.eye.lt{color:rgba(255,255,255,.35)}.eye.lt::before{background:var(--gold)}
+.eye.gd{color:var(--gold)}.eye.gd::before{background:var(--gold)}
+h2.H{font-family:var(--J);font-weight:800;font-size:clamp(1.9rem,3vw,2.65rem);line-height:1.1;color:var(--navy);letter-spacing:-.02em;margin-bottom:.9rem}
+h2.H.wh{color:var(--white)}
+h2.H em{font-family:var(--F);font-style:italic;color:var(--gold);font-weight:700}
+.lead{font-size:.94rem;color:var(--mid);max-width:500px;line-height:1.74}
+.lead.lt{color:rgba(255,255,255,.52)}
+.btn-navy{background:var(--navy);color:var(--white);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.58rem 1.35rem;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.btn-navy:hover{background:var(--navy2);transform:translateY(-1px)}
+.btn-outline-w{background:transparent;color:var(--white);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.55rem 1.3rem;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.btn-outline-w:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+
+/* 8-SERVICE GRID */
+.sg8{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:2.75rem}
+.si{background:var(--white);padding:1.7rem 1.4rem;display:flex;flex-direction:column;gap:.35rem;text-decoration:none;color:inherit;transition:all .2s;position:relative;overflow:hidden}
+.si::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .2s;transform-origin:left}
+.si:hover{background:var(--bg)}.si:hover::after{transform:scaleX(1)}
+.si-ic{font-size:1.5rem;margin-bottom:.4rem}
+.si-t{font-family:var(--J);font-weight:700;font-size:.88rem;color:var(--navy)}
+.si-d{font-size:.74rem;color:var(--muted);line-height:1.45}
+.si-l{font-size:.68rem;font-weight:700;color:var(--navy);margin-top:auto;padding-top:.45rem}
+
+/* ABOUT */
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:1.5rem}
+.wl{display:flex;flex-direction:column;gap:1.15rem;margin-top:1.5rem}
+.wi{display:flex;gap:.85rem;align-items:flex-start}
+.wn{font-family:var(--J);font-weight:800;font-size:.6rem;color:var(--gold);background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.25);width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.wt h4{font-family:var(--J);font-weight:700;font-size:.85rem;color:var(--navy);margin-bottom:2px}
+.wt p{font-size:.78rem;color:var(--muted);line-height:1.52}
+.abr{display:flex;flex-direction:column;gap:.8rem}
+.vm{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.35rem}
+.vm h4{font-family:var(--J);font-weight:700;font-size:.85rem;color:var(--navy);margin-bottom:.3rem}
+.vm p{font-size:.79rem;color:var(--mid);line-height:1.58}
+.skp{background:var(--navy);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.85rem}
+.skll{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.1rem}
+.skrow{display:flex;flex-direction:column;gap:5px}
+.skmeta{display:flex;justify-content:space-between;font-size:.76rem}
+.skmeta span:first-child{color:rgba(255,255,255,.58)}.skmeta span:last-child{color:var(--gold);font-weight:700}
+.sktrack{height:5px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
+.skfill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:100px;width:0;transition:width 1.1s ease}
+
+/* WHY US */
+.wu-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.wu-sub{font-size:.9rem;color:var(--mid);line-height:1.72;margin-bottom:1.75rem;max-width:480px}
+.acc-wrap{display:flex;flex-direction:column;gap:.6rem}
+.acc-item{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.acc-btn{width:100%;background:var(--white);border:none;padding:.95rem 1.15rem;text-align:left;font-family:var(--J);font-size:.88rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;align-items:center;gap:.75rem;transition:background .15s}
+.acc-btn:hover{background:var(--bg)}
+.acc-num{font-size:.7rem;font-weight:800;color:var(--muted);min-width:24px;transition:color .15s}
+.acc-btn.op .acc-num{color:var(--teal)}
+.acc-ico{margin-left:auto;font-size:.7rem;color:var(--muted);transition:transform .22s;display:inline-block;font-style:normal;flex-shrink:0}
+.acc-btn.op .acc-ico{transform:rotate(180deg)}
+.acc-body{font-size:.82rem;color:var(--mid);line-height:1.65;padding:0 1.15rem;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.acc-body.op{max-height:200px;padding:.1rem 1.15rem .95rem}
+/* WHY visual */
+.wu-vis{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;position:sticky;top:80px}
+.wu-card{border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:.35rem}
+.wu-c1{background:var(--navy);grid-column:span 2}
+.wu-c2{background:var(--gold)}
+.wu-c3{background:var(--bg);border:1px solid var(--border)}
+.wu-c4{background:#f0fdfa;border:1px solid #ccfbf1;grid-column:span 2}
+.wc-num{font-family:var(--J);font-weight:800;font-size:2rem;line-height:1}
+.wu-c1 .wc-num{color:var(--gold)}.wu-c2 .wc-num{color:var(--navy)}.wu-c3 .wc-num{color:var(--navy)}.wu-c4 .wc-num{color:var(--teal);font-size:1.6rem}
+.wc-lbl{font-size:.74rem}
+.wu-c1 .wc-lbl{color:rgba(255,255,255,.45)}.wu-c2 .wc-lbl{color:rgba(13,27,62,.62)}.wu-c3 .wc-lbl{color:var(--muted)}.wu-c4 .wc-lbl{color:var(--teal);font-size:.68rem}
+
+/* TESTING SERVICES */
+.tsg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.5rem}
+.tc{border:1px solid var(--border);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.45rem;background:var(--white);transition:all .2s;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transition:transform .25s;transform-origin:left}
+.tc:hover{border-color:#94a3b8;box-shadow:0 6px 24px rgba(0,0,0,.07);transform:translateY(-2px)}.tc:hover::before{transform:scaleX(1)}
+.tc-ic{width:44px;height:44px;border-radius:10px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.35rem;border:1px solid var(--border)}
+.tc-t{font-family:var(--J);font-weight:700;font-size:.9rem;color:var(--navy)}
+.tc-d{font-size:.77rem;color:var(--muted);line-height:1.52}
+.tc-l{font-size:.71rem;font-weight:700;color:var(--navy);margin-top:auto;padding-top:.45rem}
+
+/* SCHOOL STRIP */
+.school-strip{background:linear-gradient(135deg,#1a2f60,var(--navy));border-radius:16px;padding:2.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;margin-top:2.5rem}
+.school-strip::before{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:70px solid rgba(245,197,24,.05)}
+.sb-tag{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem}
+.sb-h{font-family:var(--J);font-weight:800;font-size:1.3rem;color:var(--white);margin-bottom:.3rem}
+.sb-s{font-size:.79rem;color:rgba(255,255,255,.45)}
+.sb-btns{display:flex;gap:.6rem;flex-wrap:wrap;position:relative;z-index:1}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.75rem}
+.cc{border:1px solid var(--border);border-radius:13px;padding:1.45rem;display:flex;flex-direction:column;gap:.4rem;background:var(--white);transition:all .2s}
+.cc:hover{border-color:#94a3b8;transform:translateY(-2px);box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.cc-ic{width:40px;height:40px;border-radius:9px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:.2rem;border:1px solid var(--border)}
+.cc-t{font-family:var(--J);font-weight:700;font-size:.87rem;color:var(--navy)}
+.cc-d{font-size:.75rem;color:var(--muted);line-height:1.48}
+.cc-l{font-size:.69rem;font-weight:700;color:var(--gold);margin-top:auto;padding-top:.4rem}
+
+/* TESTIMONIALS */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.25rem}
+.tec{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.85rem;transition:box-shadow .2s}
+.tec:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.tq{font-size:2rem;color:#e5e7eb;line-height:1;font-family:Georgia,serif}
+.tt{font-size:.85rem;color:var(--mid);line-height:1.68;flex:1}
+.ta{display:flex;align-items:center;gap:.65rem}
+.av{width:38px;height:38px;border-radius:50%;font-family:var(--J);font-weight:800;font-size:.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.av1{background:#bfdbfe;color:#1e40af}.av2{background:#fed7aa;color:#9a3412}.av3{background:#bbf7d0;color:#166534}
+.an{font-family:var(--J);font-weight:700;font-size:.82rem;color:var(--navy)}
+.ac{font-size:.68rem;color:var(--muted)}
+
+/* BOOTCAMP CTA */
+.bc{background:linear-gradient(135deg,var(--navy),#0a1530);padding:5.5rem 2rem;position:relative;overflow:hidden}
+.bc::before{content:'';position:absolute;right:-60px;top:-80px;width:380px;height:380px;border-radius:50%;border:80px solid rgba(255,255,255,.025)}
+.bc::after{content:'';position:absolute;left:40%;bottom:-60px;width:240px;height:240px;border-radius:50%;border:60px solid rgba(245,197,24,.04)}
+.bc-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;position:relative;z-index:1;flex-wrap:wrap}
+.bc-tag{font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.bc-h{font-family:var(--J);font-weight:800;font-size:clamp(2rem,3.5vw,2.8rem);color:var(--white);line-height:1.05;letter-spacing:-.02em}
+.bc-h em{font-family:var(--F);font-style:italic;color:var(--gold);font-weight:700;display:block}
+.bc-meta{display:flex;gap:1.25rem;margin-top:1rem;flex-wrap:wrap}
+.bc-meta span{font-size:.79rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
+.bc-r{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
+.bc-note{font-size:.63rem;color:rgba(255,255,255,.3)}
+
+/* FAQ */
+.faq-wrap{max-width:740px;margin:2.5rem auto 0}
+.fi{border-bottom:1px solid var(--border)}
+.fq{width:100%;background:none;border:none;text-align:left;padding:1.05rem 0;font-family:var(--J);font-size:.88rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.fq .ico{font-style:normal;font-size:.9rem;color:var(--muted);transition:transform .25s;flex-shrink:0}
+.fq.op .ico{transform:rotate(45deg)}
+.fa{font-size:.82rem;color:var(--mid);line-height:1.68;display:none;padding-bottom:.9rem}
+.fa.op{display:block}
+
+/* CONTACT */
+.cw{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;margin-top:2.75rem}
+.ci{display:flex;flex-direction:column;gap:1.1rem}
+.ci-row{display:flex;gap:.85rem;align-items:flex-start}
+.ci-ic{width:42px;height:42px;border-radius:10px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.ci-lb{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.ci-v{font-size:.84rem;font-weight:500;color:var(--navy)}
+.wa-btn{display:inline-flex;align-items:center;gap:7px;background:#25d366;color:var(--white);font-family:var(--J);font-weight:700;font-size:.8rem;padding:.58rem 1.15rem;border-radius:9px;text-decoration:none;width:fit-content;margin-top:.5rem;transition:opacity .15s}
+.wa-btn:hover{opacity:.88}
+.cf{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:.85rem;box-shadow:0 4px 24px rgba(0,0,0,.05)}
+.cf-h{font-family:var(--J);font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.1rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fg label{font-size:.72rem;font-weight:600;color:var(--mid)}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.55rem .82rem;color:var(--text);font-family:var(--J);font-size:.83rem;outline:none;transition:border-color .15s;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);background:var(--white)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg textarea{resize:vertical;min-height:105px}
+.map-box{border-radius:11px;overflow:hidden;border:1px solid var(--border);margin-top:1.25rem;width:100%;height:300px;position:relative}
+.map-box iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block}
+
+/* FOOTER */
+footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(--gold)}
+.fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.fb-name{font-family:var(--J);font-weight:800;font-size:.98rem;color:var(--white);letter-spacing:.05em;margin-bottom:.65rem}
+.fb p{font-size:.76rem;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px}
+.fb-ct{margin-top:1.1rem;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.9}
+.fc h5{font-family:var(--J);font-weight:700;font-size:.72rem;color:rgba(255,255,255,.82);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.9rem}
+.fc a{display:block;font-size:.76rem;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:.4rem;transition:all .15s}
+.fc a:hover{color:var(--white);padding-left:4px}
+.fb2{max-width:1200px;margin:0 auto;padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.fb2 p{font-size:.7rem;color:rgba(255,255,255,.25)}
+.fwa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#25d366;color:var(--white);border-radius:100px;padding:.56rem 1rem;font-family:var(--J);font-weight:700;font-size:.76rem;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .15s}
+.fwa:hover{opacity:.9;transform:scale(1.03)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero h1{font-size:clamp(2rem,5vw,3rem)}
+}
+@media(max-width:960px){
+  .hero-in{grid-template-columns:1fr;min-height:auto;padding:3.5rem 1.25rem 0}
+  .qa-panel{border-radius:14px;margin-bottom:2rem}
+  .qa-grid{grid-template-columns:repeat(5,1fr)}
+  .stats{grid-template-columns:1fr 1fr}
+  .ab-grid,.cw,.wu-grid{grid-template-columns:1fr;gap:2.5rem}
+  .sg8{grid-template-columns:repeat(2,1fr)}
+  .tsg,.tg,.cg{grid-template-columns:1fr 1fr}
+  .fg2{grid-template-columns:1fr 1fr;gap:2rem}
+  .nmenu{display:none}
+  nav{justify-content:space-between}
+  .bc-in{flex-direction:column}.bc-r{align-items:flex-start}
+  .wu-vis{position:static}
+}
+@media(max-width:600px){
+  .tsg,.tg,.cg{grid-template-columns:1fr}
+  .fg2{grid-template-columns:1fr}
+  .fr{grid-template-columns:1fr}
+  .qa-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<!-- <div class="ticker">
+  <div class="ttrack">
+    <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
+    <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
+    <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
+    <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+    <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
+    <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
+    <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
+    <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+  </div>
+</div> -->
+
+<!-- NAV -->
+<div class="nwrap">
+<nav>
+  <a class="logo" href="#">KIWAMI TECH</a>
+  <div class="nmenu">
+    <a class="nl active" href="#">Home</a>
+    <!-- <a class="nl" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a> -->
+    <a class="nl" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
+    <div class="ndrop">
+      <a class="nl" href="#">Co-operates Service <span class="arr">▼</span></a>
+      <div class="ndd">
+        <a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a>
+        <a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a>
+        <a href="#contact">Request Consultancy Services</a>
+        <a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a>
+      </div>
+    </div>
+    <div class="ndrop">
+      <a class="nl" href="#">Students Corner <span class="arr">▼</span></a>
+      <div class="ndd">
+        <a href="#">University Testing Clubs</a>
+        <a href="https://kiwami-school.vercel.app/" target="_blank">Student Bootcamps</a>
+        <a href="#">Kiwami Kids (Robotics)</a>
+      </div>
+    </div>
+    <div class="ndrop">
+      <a class="nl" href="#">Software QA Events <span class="arr">▼</span></a>
+      <div class="ndd">
+        <a href="https://kiwamitech.com/sqasummit2026/" target="_blank">SQA SUMMIT 2026</a>
+        <a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a>
+        <a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a>
+      </div>
+    </div>
+    <a class="nl" href="about.html">About Us</a>
+    <a class="nl" href="services.html">Services</a>
+  </div>
+  <a class="nhire" href="https://kiwamitech.com/careers" target="_blank">Hire Talent</a>
+</nav>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="h-badge"><span class="dot"></span>Africa's QA Powerhouse</div>
+      <h1>Empowering<br>Software<br><em>Quality<br>Assurance</em>Talent Across<br>Africa.</h1>
+      <p class="hero-sub">Learning, hiring, and community events — all in one place. Browse courses, request bug bashes, find jobs, and hire vetted QA talent.</p>
+      <div class="hero-btns">
+        <a class="btn-gold" href="#services">Explore Services →</a>
+        <a class="ghost-w" href="https://kiwami-school.vercel.app/" target="_blank">Browse Courses ↗</a>
+      </div>
+    </div>
+    <div class="qa-panel">
+      <div class="qa-lbl">Quick Access Our Services</div>
+      <div class="qa-grid">
+        <a class="qa-item" href="https://kiwamitech.com/school/" target="_blank"><div class="qa-ic">🎓</div><div class="qa-t">Kiwami School</div><div class="qa-s">Instructor-led QA &amp; automation bootcamp programs</div></a>
+        <a class="qa-item" href="https://kiwamitech.com/bugbash" target="_blank"><div class="qa-ic">🐛</div><div class="qa-t">Bug Bash</div><div class="qa-s">Inhouse testing events</div></a>
+        <a class="qa-item" href="#contact"><div class="qa-ic">💼</div><div class="qa-t">Consultancy</div><div class="qa-s">Testing and QA consultancy for teams</div></a>
+        <a class="qa-item" href="https://kiwamitech.com/careers" target="_blank"><div class="qa-ic">🧑‍💻</div><div class="qa-t">Job Portal</div><div class="qa-s">Find QA &amp; engineering roles</div></a>
+        <a class="qa-item" href="https://kiwamitech.com/careers" target="_blank"><div class="qa-ic">🤝</div><div class="qa-t">Hire a Talent</div><div class="qa-s">Hire vetted testers &amp; engineers</div></a>
+        <a class="qa-item" href="https://kiwamitech.com/sqasummit2025" target="_blank"><div class="qa-ic">🎤</div><div class="qa-t">Events</div><div class="qa-s">Workshops, conferences and meetups</div></a>
+        <a class="qa-item" href="https://kiwamitestcloud.com/" target="_blank"><div class="qa-ic">☁️</div><div class="qa-t">SaaS</div><div class="qa-s">Products to help manage testing workflows</div></a>
+        <a class="qa-item" href="#"><div class="qa-ic">🏫</div><div class="qa-t">University Testing Club</div><div class="qa-s">Student chapters &amp; campus outreach</div></a>
+        <a class="qa-item" href="https://kiwamitech.com/school/" target="_blank"><div class="qa-ic">🚀</div><div class="qa-t">Student Bootcamps</div><div class="qa-s">Special student pricing available</div></a>
+        <a class="qa-item" href="https://kiwamitech.com/school/"><div class="qa-ic">🤖</div><div class="qa-t">Kiwami Kids</div><div class="qa-s">Robotics program for kids</div></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="sc sn"><div class="snum">50+</div><div class="slbl">Professionals trained since founding</div></div>
+  <div class="sc sg"><div class="snum">92%</div><div class="slbl">ISTQB pass rate</div></div>
+  <div class="sc sw"><div class="snum" style="color:var(--navy)">15+</div><div class="slbl">Years combined expertise</div></div>
+  <div class="sc st"><div class="snum">ISTQB</div><div class="slbl">Certified trainers · International standard</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="eye">Our Services</div>
+  <h2 class="H">Comprehensive QA solutions<br>for <em>every need.</em></h2>
+  <p class="lead">We offer a full range of software QA testing, training, and community solutions tailored for your team.</p>
+  <div class="sg8">
+    <a class="si" href="https://kiwamitech.com/school/" target="_blank"><div class="si-ic">🎓</div><div class="si-t">Kiwami School</div><div class="si-d">Instructor-led QA &amp; automation bootcamp programs</div><div class="si-l">Browse courses →</div></a>
+    <a class="si" href="https://kiwamitech.com/bugbash" target="_blank"><div class="si-ic">🐛</div><div class="si-t">Bug Bash</div><div class="si-d">Intensive inhouse testing events</div><div class="si-l">Request a bash →</div></a>
+    <a class="si" href="#contact"><div class="si-ic">💼</div><div class="si-t">Consultancy</div><div class="si-d">Testing and QA strategy for teams</div><div class="si-l">Learn more →</div></a>
+    <a class="si" href="https://kiwamitech.com/careers" target="_blank"><div class="si-ic">🧑‍💻</div><div class="si-t">Job Portal</div><div class="si-d">Find QA &amp; engineering roles</div><div class="si-l">View roles →</div></a>
+    <a class="si" href="https://kiwamitech.com/careers" target="_blank"><div class="si-ic">🤝</div><div class="si-t">Hire a Talent</div><div class="si-d">Hire vetted testers &amp; engineers</div><div class="si-l">Find talent →</div></a>
+    <a class="si" href="https://kiwamitech.com/sqasummit2025" target="_blank"><div class="si-ic">🎤</div><div class="si-t">Events</div><div class="si-d">Workshops, conferences and meetups</div><div class="si-l">See events →</div></a>
+    <a class="si" href="https://kiwamitestcloud.com/" target="_blank"><div class="si-ic">☁️</div><div class="si-t">SaaS</div><div class="si-d">Products to help manage testing workflows</div><div class="si-l">View product →</div></a>
+    <a class="si" href="#"><div class="si-ic">🏫</div><div class="si-t">University Testing Club</div><div class="si-d">Student chapters &amp; campus outreach</div><div class="si-l">Learn more →</div></a>
+  </div>
+  <div style="text-align:center;margin-top:2rem"><a class="btn-navy" href="services.html">View All Services →</a></div>
+</section>
+
+<!-- ABOUT -->
+<div class="alt" id="about">
+  <div class="in">
+    <div class="eye">About Us</div>
+    <h2 class="H">Founded to transform<br><em>QA across Africa.</em></h2>
+    <div class="ab-grid">
+      <div>
+        <p class="lead" style="margin-bottom:.9rem">Kiwami Tech was founded on the principle that the software industry needed a transformative approach to QA testing. We recognised the challenges faced by businesses due to prevailing bugs and inefficiencies, motivating us to embark on a mission of innovation.</p>
+        <p class="lead" style="font-size:.86rem;margin-bottom:1.5rem">We are dedicated to revolutionising the software QA testing landscape while serving as a premier training hub for quality testing professionals seeking ISTQB certifications.</p>
+        <div class="wl">
+          <div class="wi"><div class="wn">01</div><div class="wt"><h4>15+ Years Combined Expertise</h4><p>Highly skilled professionals with extensive experience in Software QA testing.</p></div></div>
+          <div class="wi"><div class="wn">02</div><div class="wn" style="display:none"></div></div>
+          <div class="wi"><div class="wn">02</div><div class="wt"><h4>Comprehensive Solutions</h4><p>From requirement stage to deployment — we support your project from start to finish.</p></div></div>
+          <div class="wi"><div class="wn">03</div><div class="wt"><h4>Customer-Centric Approach</h4><p>We prioritise your needs, delivering solutions that align with your vision.</p></div></div>
+          <div class="wi"><div class="wn">04</div><div class="wt"><h4>Flexible &amp; Agile</h4><p>We adapt to scale resources, adjust timelines, or pivot direction as needed.</p></div></div>
+          <div class="wi"><div class="wn">05</div><div class="wt"><h4>Continuous Improvement</h4><p>We stay ahead of industry trends to always deliver cutting-edge solutions.</p></div></div>
+        </div>
+        <a class="btn-navy" href="about.html" style="margin-top:2rem">Learn More →</a>
+      </div>
+      <div class="abr">
+        <div class="vm"><h4>Our Vision</h4><p>To be the trusted leader in Testing as a Service (TaaS), empowering businesses to deliver flawless software with confidence.</p></div>
+        <div class="vm"><h4>Our Mission</h4><p>To revolutionise the software development process by providing exceptional testing solutions that ensure quality, performance, and security.</p></div>
+        <div class="skp">
+          <div class="skll">Training Expertise</div>
+          <div class="skrow"><div class="skmeta"><span>Manual Testing</span><span>100%</span></div><div class="sktrack"><div class="skfill" style="--w:100%"></div></div></div>
+          <div class="skrow"><div class="skmeta"><span>Automation Testing</span><span>90%</span></div><div class="sktrack"><div class="skfill" style="--w:90%"></div></div></div>
+          <div class="skrow"><div class="skmeta"><span>API Testing</span><span>75%</span></div><div class="sktrack"><div class="skfill" style="--w:75%"></div></div></div>
+          <div class="skrow"><div class="skmeta"><span>USSD Testing</span><span>75%</span></div><div class="sktrack"><div class="skfill" style="--w:75%"></div></div></div>
+          <div class="skrow"><div class="skmeta"><span>Non-Functional Testing</span><span>55%</span></div><div class="sktrack"><div class="skfill" style="--w:55%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="sec" id="why">
+  <div class="wu-grid">
+    <div>
+      <div class="eye">Why Choose Us</div>
+      <h2 class="H">Why <em>Us?</em></h2>
+      <p class="wu-sub">At Kiwami Tech, we pride ourselves on being the preferred choice for Software QA testing, QA Trainings and ISTQB certification preparation trainings. This is why..</p>
+      <div class="acc-wrap">
+        <div class="acc-item">
+          <button class="acc-btn op" onclick="acc(this)"><span class="acc-num">01</span>Expertise: Combined 15 years of Experience<i class="acc-ico">▾</i></button>
+          <div class="acc-body op">Our team comprises of highly skilled professionals with extensive experience in Software QA testing. We bring a wealth of knowledge and expertise to every project, ensuring exceptional results.</div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" onclick="acc(this)"><span class="acc-num">02</span>Comprehensive Solutions<i class="acc-ico">▾</i></button>
+          <div class="acc-body">We offer end-to-end QA solutions from requirements analysis all the way through to deployment and post-launch monitoring, covering every stage of your product lifecycle.</div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" onclick="acc(this)"><span class="acc-num">03</span>Customer-Centric Approach<i class="acc-ico">▾</i></button>
+          <div class="acc-body">We take the time to understand your unique business needs, goals, and constraints. Every solution we deliver is tailored specifically to you — not a one-size-fits-all package.</div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" onclick="acc(this)"><span class="acc-num">04</span>Flexible and Agile<i class="acc-ico">▾</i></button>
+          <div class="acc-body">Whether you need to scale resources, adjust timelines, or pivot direction — we adapt quickly and support you every step of the way without disrupting your delivery.</div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" onclick="acc(this)"><span class="acc-num">05</span>Continuous Improvement<i class="acc-ico">▾</i></button>
+          <div class="acc-body">We stay abreast of the latest industry trends, tools, and technologies so that our clients always benefit from the most current and effective QA practices available.</div>
+        </div>
+      </div>
+    </div>
+    <div class="wu-vis">
+      <div class="wu-card wu-c1"><div class="wc-num">50+</div><div class="wc-lbl">Professionals trained since founding</div></div>
+      <div class="wu-card wu-c2"><div class="wc-num">92%</div><div class="wc-lbl">ISTQB pass rate</div></div>
+      <div class="wu-card wu-c3"><div class="wc-num">15+</div><div class="wc-lbl">Years combined expertise</div></div>
+      <div class="wu-card wu-c4"><div class="wc-num">ISTQB</div><div class="wc-lbl">Certified trainers · International standard</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTING SERVICES DETAIL -->
+<div class="alt">
+  <div class="in">
+    <div class="eye">Software Testing Services</div>
+    <h2 class="H">Expert testing for every<br>layer of your <em>stack.</em></h2>
+    <p class="lead">Our expert testers and automation engineers craft meticulous strategies using both manual and automated approaches.</p>
+    <div class="tsg">
+      <div class="tc"><div class="tc-ic">☁️</div><div class="tc-t">Device Farm</div><div class="tc-d">Seamless cloud-based device testing across a vast array of devices to ensure flawless app performance on every screen.</div><div class="tc-l">Learn more →</div></div>
+      <div class="tc"><div class="tc-ic">⚡</div><div class="tc-t">Automation Testing</div><div class="tc-d">Expert automation testing powered by the latest frameworks including Playwright, Selenium, Robot Framework and Cypress.</div><div class="tc-l">Learn more →</div></div>
+      <div class="tc"><div class="tc-ic">🛡️</div><div class="tc-t">Non-Functional Testing</div><div class="tc-d">Comprehensive load, stress, performance and security testing to ensure your applications meet the highest standards.</div><div class="tc-l">Learn more →</div></div>
+      <div class="tc"><div class="tc-ic">🔍</div><div class="tc-t">Manual Testing</div><div class="tc-d">Meticulous manual testing for seamless user experiences across all platforms, browsers and devices.</div><div class="tc-l">Learn more →</div></div>
+      <div class="tc"><div class="tc-ic">📱</div><div class="tc-t">USSD Testing</div><div class="tc-d">Specialised USSD and mobile money testing — a critical discipline unique to East African fintech markets.</div><div class="tc-l">Learn more →</div></div>
+      <div class="tc"><div class="tc-ic">🔗</div><div class="tc-t">API Testing</div><div class="tc-d">Ensure seamless integration and optimal performance with our comprehensive API testing and automation services.</div><div class="tc-l">Learn more →</div></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem"><a class="btn-navy" href="services.html">View All Services →</a></div>
+  </div>
+</div>
+
+<!-- SCHOOL -->
+<div class="dark" id="school">
+  <div class="in">
+    <div class="eye lt">Kiwami School</div>
+    <h2 class="H wh">Expert-led training to<br><em>elevate your skills.</em></h2>
+    <p class="lead lt">At Kiwami School, we specialise in expert-led training programs designed to elevate your skills in software testing — from ISTQB certification preparation to full automation engineering.</p>
+    <div class="school-strip">
+      <div>
+        <div class="sb-tag">Intensive Program · Limited Seats</div>
+        <div class="sb-h">🎓 Fullstack QA Bootcamp — August 2026</div>
+        <div class="sb-s">Virtual &amp; Hybrid · Instructor-Led · Applications Open</div>
+      </div>
+      <div class="sb-btns">
+        <a class="btn-gold" href="https://kiwamitech.com/school/" target="_blank">Browse Courses</a>
+        <a class="btn-outline-w" href="https://kiwamitech.com/school/contact.html" target="_blank">Apply for Bootcamp</a>
+      </div>
+    </div>
+    <div class="eye gd" style="margin-top:2.5rem">Training Courses</div>
+    <div class="cg">
+      <div class="cc"><div class="cc-ic">📋</div><div class="cc-t">Manual Testing</div><div class="cc-d">Master manual testing techniques with our comprehensive course, led by industry experts.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">📱</div><div class="cc-t">USSD Testing</div><div class="cc-d">Specialised USSD Testing course ensuring proficiency in testing USSD-based applications.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">🔗</div><div class="cc-t">API Testing</div><div class="cc-d">Expert-led API testing training to enhance skills and optimise software integration.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">🏆</div><div class="cc-t">ISTQB Foundation Prep</div><div class="cc-d">Get ready to ace the ISTQB Foundation Level exam with our expert preparation training.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">🤖</div><div class="cc-t">ISTQB Advanced Automation</div><div class="cc-d">Excel in ISTQB Advanced Test Automation with our comprehensive preparation training.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">☁️</div><div class="cc-t">AWS Practitioner Prep</div><div class="cc-d">Prepare for AWS Practitioner certification with our comprehensive training program.</div><div class="cc-l">Enroll now →</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="sec">
+  <div class="eye">Alumni Stories</div>
+  <h2 class="H">From our students,<br><em>in their own words.</em></h2>
+  <div class="tg">
+    <div class="tec"><div class="tq">"</div><div class="tt">KiwamiTech equipped me with practical software testing and QA skills, bridging academic knowledge with industry-ready expertise.</div><div class="ta"><div class="av av1">SK</div><div><div class="an">Steve Kimani</div><div class="ac">Introduction to Software Testing</div></div></div></div>
+    <div class="tec"><div class="tq">"</div><div class="tt">The program was good. I got to learn more than I expected. I never thought software testing was a field on its own.</div><div class="ta"><div class="av av2">DM</div><div><div class="an">David Momanyi</div><div class="ac">Software Testing</div></div></div></div>
+    <div class="tec"><div class="tq">"</div><div class="tt">I truly enjoyed the software testing course. It not only improved my technical skills but also boosted my confidence in approaching testing tasks.</div><div class="ta"><div class="av av3">EO</div><div><div class="an">Erick Omondi Onyango</div><div class="ac">Software Testing</div></div></div></div>
+  </div>
+</section>
+
+<!-- BOOTCAMP CTA -->
+<div class="bc">
+  <div class="bc-in">
+    <div>
+      <div class="bc-tag">Intensive Program · Limited Seats</div>
+      <div class="bc-h">Fullstack QA<br><em>Bootcamp 2026</em></div>
+      <div class="bc-meta"><span>📅 August 2026</span><span>📍 Virtual &amp; Hybrid</span><span>🎓 Instructor-Led</span></div>
+    </div>
+    <div class="bc-r">
+      <a class="btn-gold" href="https://kiwamitech.com/school/contact.html" target="_blank" style="font-size:.9rem;padding:.7rem 1.75rem">Apply for Bootcamp →</a>
+      <div class="bc-note">Applications open</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div style="text-align:center">
+    <div class="eye" style="justify-content:center">FAQ</div>
+    <h2 class="H" style="text-align:center">Frequently asked<br><em>questions.</em></h2>
+    <p class="lead" style="margin:0 auto;text-align:center">Quick answers about software testing, ISTQB certification, and our services.</p>
+  </div>
+  <div class="faq-wrap">
+    <div class="fi"><button class="fq" onclick="faq(this)">What is software testing?<i class="ico">+</i></button><div class="fa">Software testing is a process of evaluating a software application to ensure it meets specified requirements and functions correctly. It involves running test cases, identifying defects, and ensuring the quality and reliability of the software.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)">Why is software testing important?<i class="ico">+</i></button><div class="fa">Software testing is crucial for ensuring quality, reliability, and performance. It helps identify defects early in the development process, reduces the risk of costly errors in production, and enhances user satisfaction.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)">What is ISTQB certification?<i class="ico">+</i></button><div class="fa">ISTQB (International Software Testing Qualifications Board) certification is a globally recognised program for software testers that validates knowledge and proficiency in testing principles, methodologies, and best practices.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)">What training courses does Kiwami School offer?<i class="ico">+</i></button><div class="fa">Kiwami School offers ISTQB certification preparation, manual testing, automation testing (Playwright, Selenium), USSD testing, API testing, AWS Practitioner prep, and more — for all levels.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)">How do I get started with Kiwami Tech's testing services?<i class="ico">+</i></button><div class="fa">Simply reach out through our contact form, email, or WhatsApp. We'll assess your needs, discuss requirements, and develop a customised testing solution for your project.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)">What sets Kiwami Tech apart?<i class="ico">+</i></button><div class="fa">We specialise in USSD and mobile money testing — unique disciplines critical to East African fintech. Combined with ISTQB-certified trainers, 15+ years of experience, and a community-first approach, we're the QA partner built for this market.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="alt" id="contact">
+  <div class="in">
+    <div class="eye">Contact</div>
+    <h2 class="H">Connect with<br><em>Kiwami Tech.</em></h2>
+    <p class="lead">Reach out for inquiries, collaborations, or to discuss your software testing and training needs.</p>
+    <div class="cw">
+      <div>
+        <div class="ci">
+          <div class="ci-row"><div class="ci-ic">📍</div><div><div class="ci-lb">Location</div><div class="ci-v">124 Manyani E Rd, Nairobi, Kenya</div></div></div>
+          <div class="ci-row"><div class="ci-ic">✉️</div><div><div class="ci-lb">Email</div><div class="ci-v">info@kiwamitech.com</div></div></div>
+          <div class="ci-row"><div class="ci-ic">📞</div><div><div class="ci-lb">Call</div><div class="ci-v">+254 110 436 849</div></div></div>
+        </div>
+        <a class="wa-btn" href="https://wa.me/254110436849" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+        <div class="map-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8526633408!2d36.76839827397386!3d-1.2606115355965155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f19c4ad9a5ec3%3A0x528e6c891e905495!2s124%20Manyani%20E%20Rd%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1774457055533!5m2!1sen!2ske" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+      <div class="cf">
+        <div class="cf-h">Send us a message</div>
+        <div class="fr">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Mwangi"/></div>
+          <div class="fg"><label>Your Email</label><input type="email" placeholder="jane@company.com"/></div>
+        </div>
+        <div class="fg"><label>Subject</label>
+          <select><option value="">Select subject…</option><option>Testing as a Service</option><option>Bug Bash Request</option><option>Request Consultancy Services</option><option>Hire a Talent</option><option>Request Demo For Our SAAS</option><option>Training / Kiwami School</option><option>Community / Events</option><option>Other</option></select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your project or inquiry…"></textarea></div>
+        <button class="btn-navy" style="width:fit-content;padding:.6rem 1.4rem">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg2">
+    <div>
+      <div class="fb-name">KIWAMI TECH</div>
+      <p>Africa's leading QA company delivering expert testing services, world-class training, and a thriving community of software quality professionals.</p>
+      <div class="fb-ct">📍 124 Manyani E Rd Nairobi, Kenya<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div>
+    </div>
+    <div class="fc"><h5>Useful Links</h5><a href="#">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+    <div class="fc"><h5>Our Services</h5><a href="services.html#manual">Manual Testing</a><a href="services.html#automation">Automation Testing</a><a href="services.html#nonfunctional">Non-Functional Testing</a><a href="services.html#api">API Testing</a><a href="services.html#ussd">USSD Testing</a><a href="services.html#devicefarm">Device Farm</a></div>
+    <div class="fc"><h5>Community</h5><a href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a><a href="https://kiwamitech.com/sqasummit2026" target="_blank">SQA Summit 2026</a><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA Summit 2025</a><a href="https://kiwamitech.com/careers" target="_blank">Job Portal</a><a href="https://kiwamitestcloud.com/" target="_blank">Kiwami Test Cloud</a></div>
+  </div>
+  <div class="fb2"><p>© 2026 Kiwami Tech. All Rights Reserved.</p><p>Nairobi, Kenya</p></div>
+</footer>
+
+<a class="fwa" href="https://wa.me/254110436849" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+
+<script>
+function faq(btn){const a=btn.nextElementSibling,o=btn.classList.contains('op');document.querySelectorAll('.fq').forEach(b=>b.classList.remove('op'));document.querySelectorAll('.fa').forEach(b=>b.classList.remove('op'));if(!o){btn.classList.add('op');a.classList.add('op');}}
+function acc(btn){const body=btn.nextElementSibling,isOpen=btn.classList.contains('op');document.querySelectorAll('.acc-btn').forEach(b=>{b.classList.remove('op');b.nextElementSibling.classList.remove('op')});if(!isOpen){btn.classList.add('op');body.classList.add('op');}}
+const fills=document.querySelectorAll('.skfill');
+const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.style.width=x.target.style.getPropertyValue('--w')})},{threshold:.3});
+fills.forEach(f=>ob.observe(f));
+</script>
+</body>
+</html>

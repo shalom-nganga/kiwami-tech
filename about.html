@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About Us — Kiwami Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700;1,9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0d1b3e;--navy2:#142248;--gold:#f5c518;--gold2:#d4a800;--teal:#0d9488;--white:#fff;--bg:#f7f8fc;--text:#111827;--mid:#4b5563;--muted:#9ca3af;--border:#e5e7eb;--J:'Plus Jakarta Sans',sans-serif;--F:'Fraunces',serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--J);background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6}
+.ticker{background:var(--gold);overflow:hidden;height:34px;display:flex;align-items:center}
+.ttrack{display:flex;animation:tick 38s linear infinite;white-space:nowrap}
+.ttrack span{font-size:.71rem;font-weight:700;color:var(--navy);padding:0 2.5rem}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.nwrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;padding:0 2rem}
+.logo{font-family:var(--J);font-weight:800;font-size:.92rem;color:var(--navy);text-decoration:none;letter-spacing:.07em;white-space:nowrap;margin-right:2rem;flex-shrink:0}
+.nmenu{display:flex;align-items:center;flex:1}
+.nl{font-size:.78rem;font-weight:600;color:var(--mid);text-decoration:none;padding:.55rem .75rem;white-space:nowrap;transition:color .15s;position:relative;display:flex;align-items:center;gap:3px}
+.nl:hover{color:var(--navy)}
+.ndrop{position:relative}
+.ndrop .arr{font-size:.48rem;opacity:.5;transition:transform .2s}
+.ndrop:hover>.nl{color:var(--navy)}.ndrop:hover .arr{transform:rotate(180deg)}
+.ndd{position:absolute;top:calc(100% + 4px);left:0;min-width:215px;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);padding:.4rem 0;opacity:0;pointer-events:none;transform:translateY(-5px);transition:all .17s;z-index:600}
+.ndrop:hover .ndd{opacity:1;pointer-events:all;transform:translateY(0)}
+.ndd a{display:block;padding:.52rem 1.1rem;font-size:.78rem;font-weight:500;color:var(--text);text-decoration:none;transition:all .12s}
+.ndd a:hover{background:var(--bg);color:var(--navy);padding-left:1.4rem}
+.nhire{margin-left:auto;background:var(--navy);color:var(--white);font-family:var(--J);font-weight:700;font-size:.78rem;padding:.44rem 1.15rem;border-radius:100px;text-decoration:none;border:2px solid var(--navy);transition:all .15s;white-space:nowrap;flex-shrink:0}
+.nhire:hover{background:transparent;color:var(--navy)}
+/* PAGE HEADER */
+.ph{background:var(--navy);padding:4rem 2rem 3.5rem;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;right:-60px;top:-60px;width:360px;height:360px;border-radius:50%;border:80px solid rgba(245,197,24,.04)}
+.ph-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.bc{display:flex;align-items:center;gap:.45rem;font-size:.74rem;margin-bottom:1.2rem}
+.bc a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .15s}.bc a:hover{color:var(--gold)}
+.bc span{color:rgba(255,255,255,.22)}.bc .cur{color:rgba(255,255,255,.7);font-weight:500}
+.ph-in h1{font-family:var(--J);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--white);letter-spacing:-.025em;margin-bottom:.65rem;line-height:1.06}
+.ph-in h1 em{font-family:var(--F);font-style:italic;color:var(--gold);font-weight:700}
+.ph-in p{font-size:.94rem;color:rgba(255,255,255,.52);max-width:520px;line-height:1.72}
+/* SHARED */
+.sec{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+.alt{padding:5rem 2rem;background:var(--bg)}
+.alt .in{max-width:1200px;margin:0 auto}
+.sec-h{font-family:var(--J);font-weight:800;font-size:clamp(1.5rem,2.5vw,2rem);color:var(--navy);text-align:center;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.5rem}
+.sec-bar{width:44px;height:3px;background:var(--teal);border-radius:2px;margin:0 auto 2.75rem}
+/* ABOUT INTRO */
+.ab-intro{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}
+.ab-illus{background:linear-gradient(135deg,#dbeafe,#e0f2fe);border-radius:20px;padding:2.5rem;min-height:300px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ab-illus::after{content:'';position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:rgba(79,151,217,.1)}
+.illus-inner{display:flex;gap:1.1rem;align-items:flex-end;position:relative;z-index:1;width:100%}
+.d-card{background:var(--white);border-radius:14px;padding:1.1rem;box-shadow:0 6px 24px rgba(0,0,0,.1);flex:1}
+.d-head{font-size:.62rem;font-weight:700;color:var(--muted);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.07em}
+.d-bars{display:flex;align-items:flex-end;gap:5px;height:70px}
+.db{border-radius:4px 4px 0 0;width:100%}
+.b1{height:52px;background:#4f97d9}.b2{height:35px;background:var(--gold)}.b3{height:65px;background:var(--teal)}.b4{height:28px;background:#a78bfa}.b5{height:48px;background:#4f97d9}
+.d-pies{display:flex;flex-direction:column;gap:.65rem}
+.pie-c{background:var(--white);border-radius:10px;padding:.7rem .85rem;box-shadow:0 4px 14px rgba(0,0,0,.08);display:flex;align-items:center;gap:.65rem}
+.pie-ring{width:36px;height:36px;border-radius:50%;flex-shrink:0}
+.pr1{background:conic-gradient(#4f97d9 0% 68%,#e5e7eb 68%)}
+.pr2{background:conic-gradient(var(--gold) 0% 82%,#e5e7eb 82%)}
+.pr3{background:conic-gradient(var(--teal) 0% 55%,#e5e7eb 55%)}
+.pie-txt{font-size:.62rem;color:var(--muted);font-weight:600;line-height:1.3}
+.pie-txt strong{display:block;color:var(--navy);font-size:.72rem}
+.ab-text p{font-size:.91rem;color:var(--mid);line-height:1.78;margin-bottom:1rem}
+.ab-checks{display:flex;flex-direction:column;gap:.65rem;margin-top:1.35rem}
+.ab-check{display:flex;align-items:flex-start;gap:.75rem;font-size:.87rem;color:var(--text)}
+.ck{width:20px;height:20px;background:rgba(13,148,136,.12);border:1px solid rgba(13,148,136,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:800;color:var(--teal);flex-shrink:0;margin-top:1px}
+/* HOW WE WORK */
+.hww{display:grid;grid-template-columns:1fr auto 1fr;gap:2.5rem;align-items:start;margin-top:1rem}
+.steps{display:flex;flex-direction:column;gap:1.5rem}
+.step h4{font-family:var(--J);font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.3rem}
+.step p{font-size:.8rem;color:var(--muted);line-height:1.58}
+.diagram{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+/* VALUES */
+.val-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem}
+.val-card{border:1px solid var(--border);border-radius:12px;padding:1.75rem;text-align:center;transition:all .2s}
+.val-card:hover{border-color:#94a3b8;box-shadow:0 4px 18px rgba(0,0,0,.07);transform:translateY(-2px)}
+.val-card h4{font-family:var(--J);font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:.5rem}
+.val-card p{font-size:.82rem;color:var(--mid);line-height:1.6}
+/* CORE VALUES */
+.core-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.5rem}
+.core-card{border:1px solid var(--border);border-radius:12px;padding:1.75rem;text-align:center;transition:all .2s;background:var(--white)}
+.core-card:hover{border-color:#94a3b8;box-shadow:0 4px 18px rgba(0,0,0,.07);transform:translateY(-2px)}
+.core-card h4{font-family:var(--J);font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.45rem}
+.core-card p{font-size:.79rem;color:var(--mid);line-height:1.6}
+/* EXPERTISE */
+.exp-filters{display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.ef{padding:.38rem 1rem;border-radius:100px;font-size:.78rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--mid);transition:all .18s}
+.ef.active{background:var(--teal);color:var(--white);border-color:var(--teal)}
+.ef:hover:not(.active){border-color:#94a3b8;color:var(--navy)}
+/* TOOLS GRID */
+.tools-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.85rem}
+.tool-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem .65rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;min-height:88px;transition:all .18s;cursor:default}
+.tool-card:hover{border-color:#94a3b8;box-shadow:0 4px 14px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tool-logo{width:44px;height:44px;object-fit:contain}
+.tool-name{font-family:var(--J);font-weight:700;font-size:.64rem;color:var(--navy);text-align:center;line-height:1.3}
+/* dark bg tool cards */
+.tc-dark{background:#1b1e2e;border-color:#1b1e2e}.tc-dark .tool-name{color:var(--white)}
+.tc-teal{background:#009e9e;border-color:#009e9e}.tc-teal .tool-name{color:var(--white)}
+.tc-green{background:#43b02a;border-color:#43b02a}.tc-green .tool-name{color:var(--white)}
+.tc-aws{background:#232f3e;border-color:#232f3e}.tc-aws .tool-name{color:#ff9900}
+/* text-only tool cards */
+.tool-txt{font-family:var(--J);font-weight:800;font-size:.9rem;text-align:center;line-height:1.2}
+/* FLOAT WA */
+.fwa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#25d366;color:var(--white);border-radius:100px;padding:.56rem 1rem;font-family:var(--J);font-weight:700;font-size:.76rem;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .15s}
+.fwa:hover{opacity:.9;transform:scale(1.03)}
+/* FOOTER */
+footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(--gold)}
+.fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.fb-name{font-family:var(--J);font-weight:800;font-size:.98rem;color:var(--white);letter-spacing:.05em;margin-bottom:.65rem}
+.fb p{font-size:.76rem;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px}
+.fb-ct{margin-top:1rem;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.9}
+.fc h5{font-family:var(--J);font-weight:700;font-size:.72rem;color:rgba(255,255,255,.82);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.9rem}
+.fc a{display:block;font-size:.76rem;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:.4rem;transition:all .15s}
+.fc a:hover{color:var(--white);padding-left:4px}
+.fb2{max-width:1200px;margin:0 auto;padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.fb2 p{font-size:.7rem;color:rgba(255,255,255,.25)}
+@media(max-width:960px){
+  .ab-intro,.hww{grid-template-columns:1fr;gap:2.5rem}
+  .diagram{display:none}
+  .val-grid,.core-grid{grid-template-columns:1fr 1fr}
+  .tools-grid{grid-template-columns:repeat(3,1fr)}
+  .fg2{grid-template-columns:1fr 1fr;gap:2rem}
+  .nmenu{display:none};nav{justify-content:space-between}
+}
+@media(max-width:600px){
+  .val-grid,.core-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .fg2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker"><div class="ttrack">
+  <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
+  <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
+  <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
+  <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+  <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
+  <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
+  <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
+  <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+</div></div>
+
+<div class="nwrap"><nav>
+  <a class="logo" href="kiwamitech.html">KIWAMI TECH</a>
+  <div class="nmenu">
+    <a class="nl" href="kiwamitech.html">Home</a>
+    <a class="nl" href="https://kiwami-school.vercel.app/" target="_blank">Kiwami School</a>
+    <a class="nl" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
+    <div class="ndrop"><a class="nl" href="#">Co-operates Service <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="kiwamitech.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Students Corner <span class="arr">▼</span></a><div class="ndd"><a href="#">University Testing Clubs</a><a href="https://kiwami-school.vercel.app/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Software QA Events <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a><a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a></div></div>
+  </div>
+  <a class="nhire" href="https://kiwamitech.com/careers" target="_blank">Hire Talent</a>
+</nav></div>
+
+<div class="ph"><div class="ph-in">
+  <div class="bc"><a href="kiwamitech.html">Home</a><span>/</span><span class="cur">About Us</span></div>
+  <h1>About <em>Kiwami Tech</em></h1>
+  <p>Africa's leading QA company — founded on a mission to transform software quality assurance across the continent.</p>
+</div></div>
+
+<!-- ABOUT INTRO -->
+<section class="sec">
+  <div class="ab-intro">
+    <div class="ab-illus">
+      <div class="illus-inner">
+        <div class="d-card">
+          <div class="d-head">QA Performance</div>
+          <div class="d-bars"><div class="db b1"></div><div class="db b2"></div><div class="db b3"></div><div class="db b4"></div><div class="db b5"></div></div>
+          <div style="margin-top:.75rem;display:flex;flex-direction:column;gap:.3rem">
+            <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden"><div style="height:100%;width:65%;background:#4f97d9;border-radius:2px"></div></div>
+            <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden"><div style="height:100%;width:80%;background:var(--gold);border-radius:2px"></div></div>
+            <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden"><div style="height:100%;width:45%;background:var(--teal);border-radius:2px"></div></div>
+          </div>
+        </div>
+        <div class="d-pies">
+          <div class="pie-c"><div class="pie-ring pr1"></div><div class="pie-txt"><strong>Pass Rate</strong>65% avg</div></div>
+          <div class="pie-c"><div class="pie-ring pr2"></div><div class="pie-txt"><strong>Coverage</strong>80% tests</div></div>
+          <div class="pie-c"><div class="pie-ring pr3"></div><div class="pie-txt"><strong>Automated</strong>55% suite</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ab-text">
+      <p>Kiwami Tech was founded on the principle that the software industry needed a transformative approach to QA testing. We recognized the challenges faced by businesses due to prevailing bugs and inefficiencies, motivating us to embark on a mission of innovation.</p>
+      <p>We are dedicated to revolutionizing the software QA testing landscape while serving as a premier training hub for quality testing professionals seeking ISTQB certifications. Here's a glimpse into who we are:</p>
+      <div class="ab-checks">
+        <div class="ab-check"><div class="ck">✓</div><span>We deliver top-tier Testing as a Service</span></div>
+        <div class="ab-check"><div class="ck">✓</div><span>Our expert testers and automation wizards craft meticulous strategies using both manual and automated approaches</span></div>
+        <div class="ab-check"><div class="ck">✓</div><span>We offer Quality assurance trainings including ISTQB preparation trainings</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<div class="alt"><div class="in">
+  <div class="sec-h">HOW WE WORK</div>
+  <div class="sec-bar"></div>
+  <div class="hww">
+    <div class="steps">
+      <div class="step"><h4>1. Analyse the Project Requirements</h4><p>We start by thoroughly analyzing the project requirements to gain a comprehensive understanding of your goals and objectives.</p></div>
+      <div class="step"><h4>2. Strategize the Testing Approach to Use</h4><p>Based on the project requirements, we strategize the most effective testing approach to ensure thorough coverage and optimal results.</p></div>
+      <div class="step"><h4>3. Generate the Test Plan Document</h4><p>We create a detailed test plan document outlining the testing strategy, scope, objectives, and methodologies to be employed throughout the project lifecycle.</p></div>
+      <div class="step"><h4>4. Allocate Dedicated Resources for the Project</h4><p>We allocate dedicated resources, including skilled professionals and necessary tools, to ensure the successful execution of the project within the defined timelines and budget.</p></div>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="-30 -30 560 560" xmlns="http://www.w3.org/2000/svg" style="width:340px;height:340px">
+        <circle cx="250" cy="250" r="155" fill="none" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="8 4"/>
+        <circle cx="250" cy="250" r="58" fill="#f7f8fc" stroke="#e5e7eb" stroke-width="1.5"/>
+        <text x="250" y="246" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#0d1b3e">OUR</text>
+        <text x="250" y="262" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#0d1b3e">WORKFLOW</text>
+        <!-- Node 1: top -->
+        <circle cx="250" cy="95" r="26" fill="#4f97d9"/>
+        <text x="250" y="101" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="white">1</text>
+        <text x="250" y="50" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Analyse</text>
+        <text x="250" y="64" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Requirements</text>
+        <!-- Node 2: top-right -->
+        <circle cx="371" cy="153" r="26" fill="#f5c518"/>
+        <text x="371" y="159" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="#0d1b3e">2</text>
+        <text x="430" y="128" text-anchor="start" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Strategise</text>
+        <text x="430" y="142" text-anchor="start" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Testing</text>
+        <!-- Node 3: bottom-right -->
+        <circle cx="401" cy="284" r="26" fill="#0d9488"/>
+        <text x="401" y="290" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="white">3</text>
+        <text x="436" y="279" text-anchor="start" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Generate</text>
+        <text x="436" y="293" text-anchor="start" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Test Plan</text>
+        <!-- Node 4: bottom -->
+        <circle cx="317" cy="390" r="26" fill="#f97316"/>
+        <text x="317" y="396" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="white">4</text>
+        <text x="317" y="432" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Allocate</text>
+        <text x="317" y="446" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Resources</text>
+        <!-- Node 5: bottom-left -->
+        <circle cx="183" cy="390" r="26" fill="#a78bfa"/>
+        <text x="183" y="396" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="white">5</text>
+        <text x="183" y="432" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Test</text>
+        <text x="183" y="446" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Execution</text>
+        <!-- Node 6: left -->
+        <circle cx="99" cy="284" r="26" fill="#ec4899"/>
+        <text x="99" y="290" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="white">6</text>
+        <text x="62" y="279" text-anchor="end" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Launch</text>
+        <text x="62" y="293" text-anchor="end" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">CI/CD</text>
+        <!-- Node 7: top-left -->
+        <circle cx="129" cy="153" r="26" fill="#14b8a6"/>
+        <text x="129" y="159" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="15" fill="white">7</text>
+        <text x="90" y="128" text-anchor="end" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">Monitoring</text>
+        <text x="90" y="142" text-anchor="end" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" fill="#6b7280">&amp; Analysis</text>
+      </svg>
+    </div>
+
+    <div class="steps">
+      <div class="step"><h4>5. Test Execution and Daily Reporting</h4><p>Our team executes the test plan meticulously, conducting tests, identifying issues, and providing daily reporting to keep you informed about the progress and any potential challenges.</p></div>
+      <div class="step"><h4>6. Launch and Set-Up of CI/CD Operations</h4><p>Upon completion of testing, we assist in the seamless launch and set-up of CI/CD operations to ensure efficient deployment and delivery of your software products.</p></div>
+      <div class="step"><h4>7. Monitoring and Analysis</h4><p>We continuously monitor the performance and behavior of your software products post-launch, analyzing data and gathering insights to identify areas for improvement.</p></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- OUR VALUES -->
+<section class="sec">
+  <div class="sec-h">OUR VALUES</div>
+  <div class="sec-bar"></div>
+  <div class="val-grid">
+    <div class="val-card"><h4>Vision</h4><p>To be the trusted leader in Testing as a Service (TaaS), empowering businesses to deliver flawless software with confidence.</p></div>
+    <div class="val-card"><h4>Mission</h4><p>To revolutionize the software development process by providing exceptional testing solutions that ensure quality, performance, and security.</p></div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<div class="alt"><div class="in">
+  <div class="sec-h">CORE VALUES</div>
+  <div class="sec-bar"></div>
+  <div class="core-grid">
+    <div class="core-card"><h4>Quality</h4><p>Commitment to delivering high-quality solutions and services that meet or exceed client expectations.</p></div>
+    <div class="core-card"><h4>Innovation</h4><p>Embracing creativity and continuously seeking new and better ways to solve problems and drive progress.</p></div>
+    <div class="core-card"><h4>Integrity</h4><p>Upholding honesty, transparency, and ethical standards in all aspects of our work and interactions.</p></div>
+    <div class="core-card"><h4>Customer-Centricity</h4><p>Placing the needs and satisfaction of our clients at the forefront of everything we do.</p></div>
+    <div class="core-card"><h4>Collaboration</h4><p>Fostering a culture of teamwork, respect, and open communication to achieve shared goals and success.</p></div>
+    <div class="core-card"><h4>Excellence</h4><p>Striving for excellence in all endeavors and continuously pushing ourselves to improve and excel in our work.</p></div>
+  </div>
+</div></div>
+
+<!-- OUR EXPERTISE -->
+<section class="sec">
+  <div class="sec-h">OUR EXPERTISE</div>
+  <div class="sec-bar"></div>
+  <p style="text-align:center;font-size:.88rem;color:var(--muted);max-width:700px;margin:0 auto 2rem">Our expertise spans across a spectrum of industry-leading testing tools, empowering us to deliver comprehensive and reliable testing solutions tailored to your needs.</p>
+  <div class="exp-filters">
+    <div class="ef active" onclick="ft(this,'all')">All</div>
+    <div class="ef" onclick="ft(this,'defect')">Testing and Defect Management</div>
+    <div class="ef" onclick="ft(this,'automation')">Automation Frameworks</div>
+    <div class="ef" onclick="ft(this,'devops')">Devops</div>
+    <div class="ef" onclick="ft(this,'nonfunc')">Non Functional Testing</div>
+    <div class="ef" onclick="ft(this,'cloud')">Cloud</div>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card tc-teal" data-cat="automation"><img src="https://cdn.simpleicons.org/robotframework/ffffff" alt="Robot Framework" class="tool-logo"/><span class="tool-name">Robot Framework</span></div>
+    <div class="tool-card tc-dark" data-cat="automation"><img src="https://cdn.simpleicons.org/cypress/ffffff" alt="Cypress" class="tool-logo"/><span class="tool-name">Cypress</span></div>
+    <div class="tool-card" data-cat="automation"><span class="tool-txt" style="color:#85b944">REST<br>ASSURED</span></div>
+    <div class="tool-card tc-dark" data-cat="automation"><img src="https://cdn.simpleicons.org/playwright/ffffff" alt="Playwright" class="tool-logo"/><span class="tool-name">Playwright</span></div>
+    <div class="tool-card" data-cat="automation"><img src="https://cdn.simpleicons.org/cucumber/23d96c" alt="Cucumber" class="tool-logo"/><span class="tool-name">Cucumber</span></div>
+    <div class="tool-card" data-cat="automation"><img src="https://cdn.simpleicons.org/appium/EE376D" alt="Appium" class="tool-logo"/><span class="tool-name">Appium</span></div>
+    <div class="tool-card" data-cat="defect"><span class="tool-txt" style="color:#00a2e0;font-size:.72rem">ALM<br>Octane</span></div>
+    <div class="tool-card" data-cat="defect"><img src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira" class="tool-logo"/><span class="tool-name">Jira</span></div>
+    <div class="tool-card tc-green" data-cat="automation"><img src="https://cdn.simpleicons.org/selenium/ffffff" alt="Selenium" class="tool-logo"/><span class="tool-name">Selenium</span></div>
+    <div class="tool-card" data-cat="defect"><img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="tool-logo"/><span class="tool-name">Slack</span></div>
+    <div class="tool-card" data-cat="defect"><span class="tool-txt" style="color:#65a30d;font-size:.78rem">TestRail</span></div>
+    <div class="tool-card" data-cat="defect"><span class="tool-txt" style="color:#0052cc;font-size:.78rem">ZEPHYR</span></div>
+    <div class="tool-card" data-cat="devops"><img src="https://cdn.simpleicons.org/azuredevops/0078D4" alt="Azure DevOps" class="tool-logo"/><span class="tool-name">Azure DevOps</span></div>
+    <div class="tool-card" data-cat="devops"><span class="tool-txt" style="color:var(--mid)">CI / CD</span></div>
+    <div class="tool-card" data-cat="devops"><img src="https://cdn.simpleicons.org/jenkins/D33833" alt="Jenkins" class="tool-logo"/><span class="tool-name">Jenkins</span></div>
+    <div class="tool-card" data-cat="devops"><img src="https://cdn.simpleicons.org/sonarqube/4E9BCD" alt="SonarQube" class="tool-logo"/><span class="tool-name">SonarQube</span></div>
+    <div class="tool-card tc-aws" data-cat="cloud"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS" class="tool-logo"/><span class="tool-name">AWS</span></div>
+    <div class="tool-card" data-cat="cloud"><img src="https://cdn.simpleicons.org/microsoftazure/0089D6" alt="Azure" class="tool-logo"/><span class="tool-name">Azure</span></div>
+    <div class="tool-card" data-cat="nonfunc"><img src="https://cdn.simpleicons.org/apachejmeter/D22128" alt="JMeter" class="tool-logo"/><span class="tool-name">Apache JMeter</span></div>
+    <div class="tool-card" data-cat="nonfunc"><span class="tool-txt" style="color:#d33833;font-size:.78rem">BlazeMeter</span></div>
+    <div class="tool-card" data-cat="nonfunc"><span class="tool-txt" style="color:var(--mid);font-size:.75rem">LoadRunner</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg2">
+    <div><div class="fb-name">KIWAMI TECH</div><p>Africa's leading QA company delivering expert testing, world-class training, and a thriving QA community.</p><div class="fb-ct">📍 124 Manyani E Rd Nairobi, Kenya<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div></div>
+    <div class="fc"><h5>Useful Links</h5><a href="kiwamitech.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="kiwamitech.html#contact">Contact</a></div>
+    <div class="fc"><h5>Our Services</h5><a href="services.html#manual">Manual Testing</a><a href="services.html#automation">Automation Testing</a><a href="services.html#nonfunctional">Non-Functional Testing</a><a href="services.html#api">API Testing</a><a href="services.html#ussd">USSD Testing</a></div>
+    <div class="fc"><h5>Community</h5><a href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a><a href="https://kiwamitech.com/sqasummit2026" target="_blank">SQA Summit 2026</a><a href="https://kiwamitech.com/careers" target="_blank">Job Portal</a><a href="https://kiwamitestcloud.com/" target="_blank">Kiwami Test Cloud</a></div>
+  </div>
+  <div class="fb2"><p>© 2026 Kiwami Tech. All Rights Reserved.</p><p>Nairobi, Kenya</p></div>
+</footer>
+
+<a class="fwa" href="https://wa.me/254110436849" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+
+<script>
+function ft(btn,cat){
+  document.querySelectorAll('.ef').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tool-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'flex':'none'});
+}
+</script>
+</body>
+</html>
