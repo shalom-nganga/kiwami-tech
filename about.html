@@ -138,6 +138,7 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
 @media(max-width:960px){
   .ab-intro,.hww{grid-template-columns:1fr;gap:2.5rem}
   .diagram{display:none}
+  .mob-workflow{display:flex !important}
   .val-grid,.core-grid{grid-template-columns:1fr 1fr}
   .tools-grid{grid-template-columns:repeat(3,1fr)}
   .fg2{grid-template-columns:1fr 1fr;gap:2rem}
@@ -146,6 +147,10 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   .ham{display:flex}
   nav{padding:0 1.25rem}
 }
+.mob-workflow{display:none;flex-direction:column;gap:.6rem;margin:0 0 1.5rem}
+.mw-item{display:flex;align-items:center;gap:.75rem;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:.7rem .9rem}
+.mw-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--J);font-weight:800;font-size:.8rem;color:#fff;flex-shrink:0}
+.mw-txt{font-family:var(--J);font-weight:700;font-size:.78rem;color:var(--navy)}
 @media(max-width:600px){
   .val-grid,.core-grid{grid-template-columns:1fr}
   .tools-grid{grid-template-columns:repeat(2,1fr)}
@@ -156,7 +161,7 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
 </head>
 <body>
 
-<!-- <div class="ticker"><div class="ttrack">
+<div class="ticker"><div class="ttrack">
   <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
   <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
   <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
@@ -165,7 +170,7 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
   <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
   <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
-</div></div> -->
+</div></div>
 
 <div class="nwrap"><nav>
   <a class="logo" href="index.html">KIWAMI TECH</a>
@@ -173,7 +178,7 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
     <a class="nl" href="index.html">Home</a>
     <a class="nl" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
     <a class="nl" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
-    <div class="ndrop"><a class="nl" href="#">Co-operates Service <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="index.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Co-operates Service <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="kiwamitech.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div></div>
     <div class="ndrop"><a class="nl" href="#">Students Corner <span class="arr">▼</span></a><div class="ndd"><a href="#">University Testing Clubs</a><a href="https://kiwami-school.vercel.app/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div></div>
     <div class="ndrop"><a class="nl" href="#">Software QA Events <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a><a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a></div></div>
   </div>
@@ -184,7 +189,7 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
     <a class="mob-link" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
     <a class="mob-link" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
     <div class="mob-drop-label" onclick="toggleSub(this)">Co-operates Service <span class="arr2">▼</span></div>
-    <div class="mob-sub"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="index.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div>
+    <div class="mob-sub"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="kiwamitech.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div>
     <div class="mob-drop-label" onclick="toggleSub(this)">Students Corner <span class="arr2">▼</span></div>
     <div class="mob-sub"><a href="#">University Testing Clubs</a><a href="https://kiwami-school.vercel.app/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div>
     <div class="mob-drop-label" onclick="toggleSub(this)">Software QA Events <span class="arr2">▼</span></div>
@@ -236,6 +241,15 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
 <div class="alt"><div class="in">
   <div class="sec-h">HOW WE WORK</div>
   <div class="sec-bar"></div>
+  <div class="mob-workflow">
+    <div class="mw-item"><div class="mw-num" style="background:#4f97d9">1</div><div class="mw-txt">Analyse Requirements</div></div>
+    <div class="mw-item"><div class="mw-num" style="background:#f5c518;color:#0d1b3e">2</div><div class="mw-txt">Strategise Testing</div></div>
+    <div class="mw-item"><div class="mw-num" style="background:#0d9488">3</div><div class="mw-txt">Generate Test Plan</div></div>
+    <div class="mw-item"><div class="mw-num" style="background:#f97316">4</div><div class="mw-txt">Allocate Resources</div></div>
+    <div class="mw-item"><div class="mw-num" style="background:#a78bfa">5</div><div class="mw-txt">Test Execution</div></div>
+    <div class="mw-item"><div class="mw-num" style="background:#ec4899">6</div><div class="mw-txt">Launch CI/CD</div></div>
+    <div class="mw-item"><div class="mw-num" style="background:#14b8a6">7</div><div class="mw-txt">Monitoring &amp; Analysis</div></div>
+  </div>
   <div class="hww">
     <div class="steps">
       <div class="step"><h4>1. Analyse the Project Requirements</h4><p>We start by thoroughly analyzing the project requirements to gain a comprehensive understanding of your goals and objectives.</p></div>
