@@ -62,11 +62,11 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 /* HERO */
 .hero{background:var(--navy);overflow:hidden;position:relative}
 .hero::before{content:'';position:absolute;top:-120px;left:35%;width:500px;height:500px;background:radial-gradient(circle,rgba(245,197,24,.06),transparent 65%);pointer-events:none}
-.hero-in{max-width:1300px;margin:0 auto;padding:5rem 2rem 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem;align-items:flex-start;min-height:90vh}
+.hero-in{max-width:1300px;margin:0 auto;padding:4.5rem 2rem 3rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem;align-items:center}
 .h-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:.3rem .95rem;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;margin-bottom:1.5rem;width:fit-content}
 .h-badge .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0}
 .hero h1{font-family:var(--J);font-weight:800;font-size:clamp(2.6rem,4.5vw,4.2rem);line-height:1.05;color:var(--white);letter-spacing:-.03em;margin-bottom:1.5rem}
-.hero h1 em{font-family:var(--F);font-style:italic;color:var(--gold);font-weight:700;display:block}
+.hero h1 em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800;display:inline}
 .hero-sub{font-size:1rem;color:rgba(255,255,255,.55);max-width:440px;line-height:1.78;margin-bottom:2.25rem}
 .hero-btns{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;margin-bottom:3rem}
 .btn-gold{background:var(--gold);color:var(--navy);font-family:var(--J);font-weight:700;font-size:.88rem;padding:.65rem 1.5rem;border-radius:9px;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:5px;border:none;cursor:pointer}
@@ -75,7 +75,7 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .ghost-w:hover{color:var(--white)}
 
 /* QUICK ACCESS */
-.qa-panel{background:var(--card);border-top-left-radius:16px;border-top-right-radius:16px;border:1px solid rgba(255,255,255,.07);border-bottom:none;padding:1rem 1rem 0;position:relative;z-index:1}
+.qa-panel{background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.07);padding:1rem 1rem 1.1rem;position:relative;z-index:1}
 .qa-lbl{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center;margin-bottom:.75rem}
 .qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:10px;overflow:hidden}
 .qa-item{background:var(--card);padding:.75rem .9rem;display:flex;flex-direction:row;align-items:center;gap:.65rem;text-decoration:none;color:inherit;transition:background .15s}
@@ -275,7 +275,7 @@ footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid 
   .ham{display:flex}
   nav{padding:0 1.25rem}
   .hero-in{grid-template-columns:1fr;min-height:auto;padding:3rem 1.25rem 2rem}
-  .qa-panel{border-radius:14px;margin-top:2rem;padding:.85rem .85rem 0}
+  .qa-panel{border-radius:14px;margin-top:2rem;padding:.85rem .85rem 1rem}
   .qa-grid{grid-template-columns:repeat(2,1fr)}
   .hero h1{font-size:clamp(2.4rem,6vw,3.5rem)}
   .hero-sub{max-width:100%}
@@ -311,7 +311,7 @@ footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid 
 </head>
 <body>
 
-<!-- <div class="ticker">
+<div class="ticker">
   <div class="ttrack">
     <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
     <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
@@ -322,7 +322,7 @@ footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid 
     <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
     <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
   </div>
-</div> -->
+</div>
 
 <div class="nwrap">
   <nav>
@@ -341,7 +341,7 @@ footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid 
 
     <div class="mobile-menu" id="mobileMenu">
       <a class="mob-link active" href="#">Home</a>
-      <a class="mob-link" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
+      <a class="mob-link" href="https://kiwami-school.vercel.app/" target="_blank">Kiwami School</a>
       <a class="mob-link" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
       <div class="mob-drop-label" onclick="toggleSub(this)">Co-operates Service <span class="arr2">▼</span></div>
       <div class="mob-sub"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div>
@@ -361,11 +361,11 @@ footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid 
   <div class="hero-in">
     <div>
       <div class="h-badge"><span class="dot"></span>Africa's QA Powerhouse</div>
-      <h1>Empowering<br>Software<br><em>Quality<br>Assurance</em>Talent Across<br>Africa.</h1>
+      <h1>Empowering Software <em>Quality Assurance</em> Talent Across Africa.</h1>
       <p class="hero-sub">Learning, hiring, and community events — all in one place. Browse courses, request bug bashes, find jobs, and hire vetted QA talent.</p>
       <div class="hero-btns">
         <a class="btn-gold" href="#services">Explore Services →</a>
-        <a class="ghost-w" href="https://kiwamitech.com/school/" target="_blank">Browse Courses ↗</a>
+        <a class="ghost-w" href="https://kiwami-school.vercel.app/" target="_blank">Browse Courses ↗</a>
       </div>
     </div>
     <div class="qa-panel">
@@ -507,12 +507,12 @@ footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid 
     </div>
     <div class="eye gd" style="margin-top:2.5rem">Training Courses</div>
     <div class="cg">
-      <div class="cc"><div class="cc-ic">📋</div><div class="cc-t">Manual Testing</div><div class="cc-d">Master manual testing techniques with our comprehensive course, led by industry experts.</div></div>
-      <!-- <div class="cc"><div class="cc-ic">📱</div><div class="cc-t">USSD Testing</div><div class="cc-d">Specialised USSD Testing course ensuring proficiency in testing USSD-based applications.</div><div class="cc-l">Enroll now →</div></div> -->
-      <div class="cc"><div class="cc-ic">🔗</div><div class="cc-t">API Testing</div><div class="cc-d">Expert-led API testing training to enhance skills and optimise software integration.</div></div>
-      <div class="cc"><div class="cc-ic">🏆</div><div class="cc-t">ISTQB Foundation Prep</div><div class="cc-d">Get ready to ace the ISTQB Foundation Level exam with our expert preparation training.</div></div>
-      <div class="cc"><div class="cc-ic">🤖</div><div class="cc-t">ISTQB Advanced Automation</div><div class="cc-d">Excel in ISTQB Advanced Test Automation with our comprehensive preparation training.</div></div>
-      <div class="cc"><div class="cc-ic">☁️</div><div class="cc-t">AWS Practitioner Prep</div><div class="cc-d">Prepare for AWS Practitioner certification with our comprehensive training program.</div></div>
+      <div class="cc"><div class="cc-ic">📋</div><div class="cc-t">Manual Testing</div><div class="cc-d">Master manual testing techniques with our comprehensive course, led by industry experts.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">📱</div><div class="cc-t">USSD Testing</div><div class="cc-d">Specialised USSD Testing course ensuring proficiency in testing USSD-based applications.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">🔗</div><div class="cc-t">API Testing</div><div class="cc-d">Expert-led API testing training to enhance skills and optimise software integration.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">🏆</div><div class="cc-t">ISTQB Foundation Prep</div><div class="cc-d">Get ready to ace the ISTQB Foundation Level exam with our expert preparation training.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">🤖</div><div class="cc-t">ISTQB Advanced Automation</div><div class="cc-d">Excel in ISTQB Advanced Test Automation with our comprehensive preparation training.</div><div class="cc-l">Enroll now →</div></div>
+      <div class="cc"><div class="cc-ic">☁️</div><div class="cc-t">AWS Practitioner Prep</div><div class="cc-d">Prepare for AWS Practitioner certification with our comprehensive training program.</div><div class="cc-l">Enroll now →</div></div>
     </div>
   </div>
 </div>
