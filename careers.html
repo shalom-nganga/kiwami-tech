@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Careers & Talent — Kiwami Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700;1,9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0d1b3e;--navy2:#142248;--card:#182d58;--gold:#f5c518;--gold2:#d4a800;--teal:#0d9488;--white:#fff;--bg:#f7f8fc;--text:#111827;--mid:#4b5563;--muted:#9ca3af;--border:#e5e7eb;--J:'Plus Jakarta Sans',sans-serif;--F:'Fraunces',serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--J);background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+.ticker{background:var(--gold);overflow:hidden;height:34px;display:flex;align-items:center}
+.ttrack{display:flex;animation:tick 38s linear infinite;white-space:nowrap}
+.ttrack span{font-size:.71rem;font-weight:700;color:var(--navy);padding:0 2.5rem}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.nwrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;padding:0 1.5rem;position:relative}
+.logo{font-family:var(--J);font-weight:800;font-size:.92rem;color:var(--navy);text-decoration:none;letter-spacing:.07em;white-space:nowrap;margin-right:2rem;flex-shrink:0}
+.nmenu{display:flex;align-items:center;flex:1}
+.nl{font-size:.78rem;font-weight:600;color:var(--mid);text-decoration:none;padding:.55rem .75rem;white-space:nowrap;transition:color .15s;position:relative;display:flex;align-items:center;gap:3px}
+.nl:hover{color:var(--navy)}
+.ndrop{position:relative}
+.ndrop .arr{font-size:.48rem;opacity:.5;transition:transform .2s}
+.ndrop:hover>.nl{color:var(--navy)}.ndrop:hover .arr{transform:rotate(180deg)}
+.ndd{position:absolute;top:calc(100% + 4px);left:0;min-width:215px;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);padding:.4rem 0;opacity:0;pointer-events:none;transform:translateY(-5px);transition:all .17s;z-index:600}
+.ndrop:hover .ndd{opacity:1;pointer-events:all;transform:translateY(0)}
+.ndd a{display:block;padding:.52rem 1.1rem;font-size:.78rem;font-weight:500;color:var(--text);text-decoration:none;transition:all .12s}
+.ndd a:hover{background:var(--bg);color:var(--navy);padding-left:1.4rem}
+.nhire{margin-left:auto;background:var(--navy);color:var(--white);font-family:var(--J);font-weight:700;font-size:.78rem;padding:.44rem 1.15rem;border-radius:100px;text-decoration:none;border:2px solid var(--navy);transition:all .15s;white-space:nowrap;flex-shrink:0}
+.nhire:hover{background:transparent;color:var(--navy)}
+
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none;margin-left:auto;flex-shrink:0}
+.ham span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+.mobile-menu{display:none;position:absolute;top:60px;left:0;right:0;background:var(--white);border-top:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:499;padding:.5rem 0}
+.mobile-menu.open{display:block}
+.mob-link{display:block;padding:.75rem 1.5rem;font-size:.88rem;font-weight:600;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border)}
+.mob-link.active{color:var(--navy);background:var(--bg)}
+.mob-drop-label{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.5rem;font-size:.88rem;font-weight:600;color:var(--mid);cursor:pointer;border-bottom:1px solid var(--border)}
+.mob-drop-label.open{color:var(--navy);background:var(--bg)}
+.mob-drop-label .arr2{font-size:.5rem;transition:transform .2s}
+.mob-drop-label.open .arr2{transform:rotate(180deg)}
+.mob-sub{display:none;background:#f8f9fb}
+.mob-sub.open{display:block}
+.mob-sub a{display:block;padding:.6rem 2rem;font-size:.82rem;font-weight:500;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border)}
+.mob-hire{display:block;padding:.85rem 1.5rem;font-size:.88rem;font-weight:700;color:var(--navy);text-decoration:none;text-align:center;background:var(--gold);margin:.75rem 1rem;border-radius:8px}
+
+/* PAGE HEADER */
+.ph{background:var(--navy);padding:4rem 2rem 3.5rem;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;right:-60px;top:-60px;width:360px;height:360px;border-radius:50%;border:80px solid rgba(245,197,24,.04)}
+.ph-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.bc{display:flex;align-items:center;gap:.45rem;font-size:.74rem;margin-bottom:1.2rem}
+.bc a{color:rgba(255,255,255,.45);text-decoration:none}.bc a:hover{color:var(--gold)}
+.bc span{color:rgba(255,255,255,.22)}.bc .cur{color:rgba(255,255,255,.7);font-weight:500}
+.ph-in h1{font-family:var(--J);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--white);letter-spacing:-.025em;margin-bottom:.65rem;line-height:1.06}
+.ph-in h1 em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800}
+.ph-in p{font-size:.94rem;color:rgba(255,255,255,.52);max-width:560px;line-height:1.72}
+
+/* SHARED */
+.sec{padding:4.5rem 1.5rem;max-width:1200px;margin:0 auto}
+.alt{padding:4.5rem 1.5rem;background:var(--bg)}
+.alt .in,.dark .in{max-width:1200px;margin:0 auto}
+.dark{padding:4.5rem 1.5rem;background:var(--navy)}
+.eye{display:flex;align-items:center;gap:8px;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem}
+.eye::before{content:'';width:20px;height:2px;background:var(--navy);flex-shrink:0;border-radius:2px}
+.eye.lt{color:rgba(255,255,255,.35)}.eye.lt::before{background:var(--gold)}
+h2.H{font-family:var(--J);font-weight:800;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1;color:var(--navy);letter-spacing:-.02em;margin-bottom:.9rem}
+h2.H.wh{color:var(--white)}
+h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800}
+.lead{font-size:.94rem;color:var(--mid);max-width:560px;line-height:1.74}
+.lead.lt{color:rgba(255,255,255,.52)}
+.btn-navy{background:var(--navy);color:var(--white);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.6rem 1.4rem;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.btn-navy:hover{background:var(--navy2);transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--navy);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.6rem 1.4rem;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--navy);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.58rem 1.35rem;border-radius:8px;text-decoration:none;border:1.5px solid var(--navy);transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.btn-outline:hover{background:var(--navy);color:var(--white)}
+
+/* TWO-PATH CHOOSER */
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+.path-card{border:1px solid var(--border);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:.6rem;transition:all .2s;background:var(--white)}
+.path-card:hover{border-color:#94a3b8;box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-3px)}
+.path-ic{width:50px;height:50px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:.4rem;border:1px solid var(--border)}
+.path-card h3{font-family:var(--J);font-weight:800;font-size:1.1rem;color:var(--navy)}
+.path-card p{font-size:.85rem;color:var(--mid);line-height:1.62;margin-bottom:.6rem}
+
+/* JOB CARDS */
+.job-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.5rem}
+.job-card{border:1px solid var(--border);border-radius:14px;padding:1.5rem;background:var(--white);transition:all .2s;display:flex;flex-direction:column;gap:.5rem}
+.job-card:hover{border-color:#94a3b8;box-shadow:0 6px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.job-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.job-title{font-family:var(--J);font-weight:700;font-size:.95rem;color:var(--navy)}
+.job-tag{font-size:.62rem;font-weight:700;background:rgba(13,148,136,.1);color:var(--teal);border:1px solid rgba(13,148,136,.25);padding:.22rem .6rem;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.job-meta{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.74rem;color:var(--muted)}
+.job-meta span{display:flex;align-items:center;gap:4px}
+.job-d{font-size:.79rem;color:var(--mid);line-height:1.55}
+.job-apply{font-size:.74rem;font-weight:700;color:var(--navy);text-decoration:none;margin-top:auto;padding-top:.4rem;display:inline-flex;align-items:center;gap:4px}
+.job-apply:hover{color:var(--teal)}
+.cv-note{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.cv-note p{font-size:.86rem;color:var(--mid);max-width:480px}
+.cv-note strong{color:var(--navy)}
+
+/* BENEFITS */
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.ben-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.ben-ic{font-size:1.3rem}
+.ben-card h4{font-family:var(--J);font-weight:700;font-size:.9rem;color:var(--white)}
+.ben-card p{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.55}
+
+/* PROCESS STEPS */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.proc-card{position:relative;padding-top:.5rem}
+.proc-num{font-family:var(--J);font-weight:800;font-size:1.8rem;color:rgba(13,27,62,.12);position:absolute;top:-.6rem;right:0}
+.proc-card h4{font-family:var(--J);font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:.35rem;position:relative;z-index:1}
+.proc-card p{font-size:.78rem;color:var(--muted);line-height:1.55;position:relative;z-index:1}
+
+/* TALENT CATEGORIES */
+.tal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.tal-card{border:1px solid var(--border);border-radius:13px;padding:1.4rem;background:var(--white);transition:all .2s}
+.tal-card:hover{border-color:#94a3b8;box-shadow:0 4px 18px rgba(0,0,0,.06);transform:translateY(-2px)}
+.tal-card h4{font-family:var(--J);font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:.35rem}
+.tal-card p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* TABS + FORM */
+.tabs-wrap{margin-top:2.5rem;max-width:760px}
+.tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.tab-btn{background:none;border:none;font-family:var(--J);font-weight:700;font-size:.86rem;color:var(--muted);padding:.7rem 1rem;cursor:pointer;position:relative;transition:color .15s}
+.tab-btn.active{color:var(--navy)}
+.tab-btn.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--gold)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.cf{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;flex-direction:column;gap:.85rem;box-shadow:0 4px 24px rgba(0,0,0,.05)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fg label{font-size:.72rem;font-weight:600;color:var(--mid)}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.55rem .82rem;color:var(--text);font-family:var(--J);font-size:.83rem;outline:none;transition:border-color .15s;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);background:var(--white)}
+.fg textarea{resize:vertical;min-height:95px}
+
+footer{background:var(--navy);padding:3.5rem 1.5rem 1.5rem;border-top:3px solid var(--gold)}
+.fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.fb-name{font-family:var(--J);font-weight:800;font-size:.98rem;color:var(--white);letter-spacing:.05em;margin-bottom:.65rem}
+.fb p{font-size:.76rem;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px}
+.fb-ct{margin-top:1.1rem;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.9}
+.fc h5{font-family:var(--J);font-weight:700;font-size:.72rem;color:rgba(255,255,255,.82);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.9rem}
+.fc a{display:block;font-size:.76rem;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:.4rem}
+.fc a:hover{color:var(--white)}
+.fb2{max-width:1200px;margin:0 auto;padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.fb2 p{font-size:.7rem;color:rgba(255,255,255,.25)}
+.fwa{position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;background:#25d366;color:var(--white);border-radius:100px;padding:.5rem .9rem;font-family:var(--J);font-weight:700;font-size:.74rem;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(37,211,102,.4)}
+
+@media(max-width:960px){
+  .nmenu{display:none}.nhire{display:none}.ham{display:flex}
+  nav{padding:0 1.25rem}
+  .path-grid,.job-grid{grid-template-columns:1fr}
+  .ben-grid,.tal-grid{grid-template-columns:1fr 1fr}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .fg2{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:640px){
+  .ben-grid,.tal-grid,.proc-grid{grid-template-columns:1fr}
+  .fr{grid-template-columns:1fr}
+  .fg2{grid-template-columns:1fr}
+  .cv-note{flex-direction:column;align-items:flex-start}
+  .sec,.alt .in,.dark .in{padding-left:1rem;padding-right:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker"><div class="ttrack">
+  <span>🎓 Student Bootcamp — Introduction to Software Testing at <strong>Ksh 9,999</strong></span>
+  <span>🎯 Are you a university or college student? Break into Software Testing today</span>
+  <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+  <span>🚀 Student Bootcamp — Special offer at <strong>Ksh 9,999</strong> · Click to learn more</span>
+  <span>📅 Next Cohort: August 2026 · Virtual &amp; Hybrid · Instructor-Led</span>
+  <span>🎓 Student Bootcamp — Introduction to Software Testing at <strong>Ksh 9,999</strong></span>
+  <span>🎯 Are you a university or college student? Break into Software Testing today</span>
+  <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+</div></div>
+
+<div class="nwrap"><nav>
+  <a class="logo" href="index.html">KIWAMI TECH</a>
+  <div class="nmenu">
+    <a class="nl" href="index.html">Home</a>
+    <a class="nl" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
+    <div class="ndrop"><a class="nl" href="#">Corporate Services <span class="arr">▼</span></a><div class="ndd"><a href="careers.html">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="index.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Students Corner <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/universitytestingclub/index.php" target="_blank">University Testing Clubs</a><a href="https://kiwamitech.com/school/" target="_blank">Student Bootcamps</a><a href="https://kiwamitech.com/kiwamikids/" target="_blank">Kiwami Kids (Robotics)</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Software QA Events <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/sqasummit2026/" target="_blank">SQA SUMMIT 2026</a><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a><a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a></div></div>
+    <a class="nl" href="about.html">About Us</a>
+    <a class="nl" href="services.html">Services</a>
+  </div>
+  <a class="nhire" href="careers.html">Hire Talent</a>
+  <button class="ham" id="hamBtn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mob-link" href="index.html">Home</a>
+    <a class="mob-link" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
+    <a class="mob-link" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
+    <div class="mob-drop-label" onclick="toggleSub(this)">Corporate Services <span class="arr2">▼</span></div>
+    <div class="mob-sub"><a href="careers.html">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="index.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div>
+    <div class="mob-drop-label" onclick="toggleSub(this)">Students Corner <span class="arr2">▼</span></div>
+    <div class="mob-sub"><a href="https://kiwamitech.com/universitytestingclub/" target="_blank">University Testing Clubs</a><a href="https://kiwamitech.com/school/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div>
+    <div class="mob-drop-label" onclick="toggleSub(this)">Software QA Events <span class="arr2">▼</span></div>
+    <div class="mob-sub"><a href="https://kiwamitech.com/sqasummit2026/" target="_blank">SQA SUMMIT 2026</a><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a><a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a></div>
+    <a class="mob-link active" href="careers.html">Careers</a>
+    <a class="mob-link" href="about.html">About Us</a>
+    <a class="mob-link" href="services.html">Services</a>
+    <a class="mob-hire" href="careers.html">Hire Talent</a>
+  </div>
+</nav></div>
+
+<div class="ph"><div class="ph-in">
+  <div class="bc"><a href="index.html">Home</a><span>/</span><span class="cur">Careers &amp; Talent</span></div>
+  <h1>Careers &amp; <em>Talent.</em></h1>
+  <p>Find your next QA role and join a growing community of certified testing professionals — or hire vetted, ISTQB-certified QA talent for your team.</p>
+</div></div>
+
+<!-- TWO PATHS -->
+<section class="sec">
+  <!-- <div class="path-grid">
+    <div class="path-card">
+      <div class="path-ic">🧑‍💻</div>
+      <h3>Looking for a QA role?</h3>
+      <p>Browse open positions, join our talent network, and get matched with real client projects — backed by ISTQB-certified training and mentorship.</p>
+      <a class="btn-navy" href="#positions">View Open Positions →</a>
+    </div> -->
+    <div class="path-card">
+      <div class="path-ic">🏢</div>
+      <h3>Need to hire QA talent?</h3>
+      <p>Access our network of vetted testers and automation engineers — manual, automation, API, security, USSD and more — ready to plug into your team.</p>
+      <a class="btn-outline" href="#hire">Request Talent →</a>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN POSITIONS -->
+<!-- <div class="alt" id="positions"><div class="in">
+  <div class="eye">Open Positions</div>
+  <h2 class="H">Current <em>Opportunities.</em></h2>
+  <p class="lead">We're always growing our network of QA professionals. Here are roles we're actively recruiting for — even if you don't see an exact match, we encourage you to submit your CV below.</p>
+  <div class="job-grid">
+    <div class="job-card">
+      <div class="job-top"><div class="job-title">QA Automation Engineer</div><span class="job-tag">Full-time</span></div>
+      <div class="job-meta"><span>📍 Nairobi / Remote</span><span>💼 Mid–Senior</span></div>
+      <div class="job-d">Build and maintain automated test suites using Playwright, Selenium or Cypress for web and mobile applications.</div>
+      <a class="job-apply" href="#apply">Apply Now →</a>
+    </div>
+    <div class="job-card">
+      <div class="job-top"><div class="job-title">Manual Test Engineer</div><span class="job-tag">Full-time</span></div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>💼 Entry–Mid</span></div>
+      <div class="job-d">Execute structured test plans, log defects, and ensure functional quality across web and mobile platforms.</div>
+      <a class="job-apply" href="#apply">Apply Now →</a>
+    </div>
+    <div class="job-card">
+      <div class="job-top"><div class="job-title">API Test Engineer</div><span class="job-tag">Contract</span></div>
+      <div class="job-meta"><span>📍 Remote</span><span>💼 Mid</span></div>
+      <div class="job-d">Design and execute API test strategies using Postman, REST Assured, and CI/CD-integrated pipelines.</div>
+      <a class="job-apply" href="#apply">Apply Now →</a>
+    </div>
+    <div class="job-card">
+      <div class="job-top"><div class="job-title">USSD / Mobile Money Tester</div><span class="job-tag">Contract</span></div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>💼 Mid</span></div>
+      <div class="job-d">Test USSD applications and mobile money integrations across major East African telecom networks.</div>
+      <a class="job-apply" href="#apply">Apply Now →</a>
+    </div>
+    <div class="job-card">
+      <div class="job-top"><div class="job-title">Security / Penetration Tester</div><span class="job-tag">Full-time</span></div>
+      <div class="job-meta"><span>📍 Remote</span><span>💼 Senior</span></div>
+      <div class="job-d">Conduct vulnerability assessments and penetration testing to safeguard client applications and data.</div>
+      <a class="job-apply" href="#apply">Apply Now →</a>
+    </div>
+    <div class="job-card">
+      <div class="job-top"><div class="job-title">ISTQB Certified Trainer</div><span class="job-tag">Part-time</span></div>
+      <div class="job-meta"><span>📍 Nairobi / Hybrid</span><span>💼 Senior</span></div>
+      <div class="job-d">Deliver ISTQB certification prep training and mentor students at Kiwami School.</div>
+      <a class="job-apply" href="#apply">Apply Now →</a>
+    </div>
+  </div>
+  <div class="cv-note">
+    <p><strong>Don't see a fit?</strong> We're always expanding our talent network — submit your CV and we'll reach out when a matching role opens up.</p>
+    <a class="btn-gold" href="#apply">Submit Your CV →</a>
+  </div>
+</div></div> -->
+
+<!-- WHY JOIN US -->
+<div class="dark">
+  <div class="in">
+    <div class="eye lt">Why Join Us</div>
+    <h2 class="H wh">Built for QA <em>professionals.</em></h2>
+    <p class="lead lt">We invest in our talent network with real training, mentorship, and project experience.</p>
+    <div class="ben-grid">
+      <div class="ben-card"><div class="ben-ic">💰</div><h4>Competitive Pay</h4><p>Fair, market-aligned compensation for vetted QA professionals.</p></div>
+      <div class="ben-card"><div class="ben-ic">🌍</div><h4>Remote-Friendly</h4><p>Many roles support remote or hybrid work across Africa.</p></div>
+      <div class="ben-card"><div class="ben-ic">🎓</div><h4>Mentorship &amp; Training</h4><p>Ongoing access to Kiwami School courses and ISTQB cert prep.</p></div>
+      <div class="ben-card"><div class="ben-ic">🚀</div><h4>Real Client Projects</h4><p>Work on live testing engagements, not just theory.</p></div>
+      <div class="ben-card"><div class="ben-ic">🏆</div><h4>Certification Support</h4><p>Guidance and sponsorship pathways for ISTQB certifications.</p></div>
+      <div class="ben-card"><div class="ben-ic">🤝</div><h4>Community Access</h4><p>Join the Kiwami Tech Community and QA events network.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- APPLICATION PROCESS -->
+<section class="sec">
+  <div class="eye">How It Works</div>
+  <h2 class="H">Our application <em>process.</em></h2>
+  <div class="proc-grid">
+    <div class="proc-card"><div class="proc-num">01</div><h4>Submit Application</h4><p>Apply to a role or submit your CV to join our talent network.</p></div>
+    <div class="proc-card"><div class="proc-num">02</div><h4>Skills Assessment</h4><p>Complete a technical assessment or interview relevant to your role.</p></div>
+    <div class="proc-card"><div class="proc-num">03</div><h4>Vetting &amp; Verification</h4><p>We verify experience, certifications, and references.</p></div>
+    <div class="proc-card"><div class="proc-num">04</div><h4>Get Matched</h4><p>Join our talent pool and get matched to roles or client projects.</p></div>
+  </div>
+</section>
+
+<!-- FOR COMPANIES -->
+<div class="alt" id="hire"><div class="in">
+  <div class="eye">For Companies</div>
+  <h2 class="H">Hire vetted <em>QA talent.</em></h2>
+  <p class="lead">Every professional in our network is vetted for skills, experience, and certification. Tell us what you need and we'll match you with the right talent.</p>
+  <div class="tal-grid">
+    <div class="tal-card"><h4>Manual Testing</h4><p>Functional, regression, and exploratory testing across platforms.</p></div>
+    <div class="tal-card"><h4>Automation Engineering</h4><p>Playwright, Selenium, Cypress, Robot Framework specialists.</p></div>
+    <div class="tal-card"><h4>API Testing</h4><p>REST/SOAP API testing and CI/CD pipeline integration.</p></div>
+    <div class="tal-card"><h4>USSD &amp; Mobile Money</h4><p>Specialised East African fintech and telecom testing.</p></div>
+    <div class="tal-card"><h4>Security Testing</h4><p>Vulnerability scanning and penetration testing.</p></div>
+    <div class="tal-card"><h4>QA Leadership</h4><p>Test leads and QA managers to run your testing function end-to-end.</p></div>
+  </div>
+</div></div>
+
+<!-- TABBED FORM: APPLY / REQUEST TALENT -->
+<section class="sec" id="apply">
+  <div class="eye">Get Started</div>
+  <h2 class="H">Apply, or <em>request talent.</em></h2>
+  <p class="lead">Choose the option that fits you below.</p>
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" id="tabApplyBtn" onclick="switchTab('apply')">Apply for a Role</button>
+      <button class="tab-btn" id="tabHireBtn" onclick="switchTab('hire')">Request Talent</button>
+    </div>
+
+    <div class="tab-panel active" id="tabApply">
+      <div class="cf">
+        <div class="fr">
+          <div class="fg"><label>Full Name</label><input type="text" id="jobseeker-name" placeholder="Jane Mwangi"/></div>
+          <div class="fg"><label>Email</label><input type="email" id="jobseeker-email" placeholder="jane@email.com"/></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Phone</label><input type="text" id="jobseeker-phone" placeholder="+254 7xx xxx xxx"/></div>
+          <div class="fg"><label>Role Interested In</label>
+            <select id="jobseeker-role"><option value="">Select role…</option><option>QA Automation Engineer</option><option>Manual Test Engineer</option><option>API Test Engineer</option><option>USSD / Mobile Money Tester</option><option>Security / Penetration Tester</option><option>ISTQB Certified Trainer</option><option>Other / General Application</option></select>
+          </div>
+        </div>
+        <div class="fg"><label>LinkedIn / Portfolio URL (optional)</label><input type="text" id="jobseeker-link" placeholder="https://linkedin.com/in/yourname"/></div>
+        <div class="fg"><label>Tell us about your experience</label><textarea id="jobseeker-message" placeholder="Briefly describe your QA experience, certifications, and tools you've worked with…"></textarea></div>
+        <button class="btn-navy" id="jobseeker-submit" style="width:fit-content" onclick="submitJobseeker()">Submit Application →</button>
+        <div id="jobseeker-status" style="font-size:.8rem;margin-top:.25rem;display:none"></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tabHire">
+      <div class="cf">
+        <div class="fr">
+          <div class="fg"><label>Company Name</label><input type="text" id="hirer-company" placeholder="Acme Ltd"/></div>
+          <div class="fg"><label>Contact Email</label><input type="email" id="hirer-email" placeholder="you@company.com"/></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Contact Phone</label><input type="text" id="hirer-phone" placeholder="+254 7xx xxx xxx"/></div>
+          <div class="fg"><label>Talent Needed</label>
+            <select id="hirer-talent"><option value="">Select talent type…</option><option>Manual Testing</option><option>Automation Engineering</option><option>API Testing</option><option>USSD / Mobile Money Testing</option><option>Security Testing</option><option>QA Leadership</option><option>Not sure / Need guidance</option></select>
+          </div>
+        </div>
+        <div class="fg"><label>Project Details</label><textarea id="hirer-message" placeholder="Tell us about your project, timeline, and the kind of talent you're looking for…"></textarea></div>
+        <button class="btn-navy" id="hirer-submit" style="width:fit-content" onclick="submitHirer()">Request Talent →</button>
+        <div id="hirer-status" style="font-size:.8rem;margin-top:.25rem;display:none"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fg2">
+    <div><div class="fb-name">KIWAMI TECH</div><p>Africa's leading QA company delivering expert testing services, world-class training, and a thriving community of software quality professionals.</p><div class="fb-ct">📍 124 Manyani E Rd Nairobi, Kenya<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div></div>
+    <div class="fc"><h5>Useful Links</h5><a href="kiwamitech.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="careers.html">Careers</a><a href="kiwamitech.html#contact">Contact</a></div>
+    <div class="fc"><h5>Our Services</h5><a href="services.html#manual">Manual Testing</a><a href="services.html#automation">Automation Testing</a><a href="services.html#api">API Testing</a><a href="services.html#ussd">USSD Testing</a></div>
+    <div class="fc"><h5>Community</h5><a href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a><a href="https://kiwamitech.com/sqasummit2026" target="_blank">SQA Summit 2026</a><a href="https://kiwamitestcloud.com/" target="_blank">Kiwami Test Cloud</a></div>
+  </div>
+  <div class="fb2"><p>© 2026 Kiwami Tech. All Rights Reserved.</p><p>Nairobi, Kenya</p></div>
+</footer>
+
+<a class="fwa" href="https://wa.me/254110436849" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+
+<script>
+function toggleMenu(){const btn=document.getElementById('hamBtn'),menu=document.getElementById('mobileMenu');btn.classList.toggle('open');menu.classList.toggle('open');}
+function toggleSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
+
+function switchTab(tab){
+  document.getElementById('tabApplyBtn').classList.toggle('active', tab==='apply');
+  document.getElementById('tabHireBtn').classList.toggle('active', tab==='hire');
+  document.getElementById('tabApply').classList.toggle('active', tab==='apply');
+  document.getElementById('tabHire').classList.toggle('active', tab==='hire');
+}
+
+// ⚠️ Point these to your actual PHP endpoints once ready
+const JOBSEEKER_ENDPOINT = "jobseeker-apply.php";
+const HIRER_ENDPOINT = "request-talent.php";
+
+function submitJobseeker(){
+  const name = document.getElementById('jobseeker-name').value.trim();
+  const email = document.getElementById('jobseeker-email').value.trim();
+  const phone = document.getElementById('jobseeker-phone').value.trim();
+  const role = document.getElementById('jobseeker-role').value.trim();
+  const link = document.getElementById('jobseeker-link').value.trim();
+  const message = document.getElementById('jobseeker-message').value.trim();
+  const statusEl = document.getElementById('jobseeker-status');
+  const btn = document.getElementById('jobseeker-submit');
+
+  if(!name || !email || !message){
+    statusEl.style.display='block';statusEl.style.color='#dc2626';
+    statusEl.textContent='Please fill in your name, email, and experience.';
+    return;
+  }
+  btn.disabled=true;btn.textContent='Submitting…';statusEl.style.display='none';
+
+  const fd = new FormData();
+  fd.append('name',name);fd.append('email',email);fd.append('phone',phone);
+  fd.append('role',role);fd.append('link',link);fd.append('message',message);
+
+  fetch(JOBSEEKER_ENDPOINT,{method:'POST',body:fd})
+    .then(r=>r.text())
+    .then(t=>{
+      statusEl.style.display='block';
+      if(t.toLowerCase().includes('success')){
+        statusEl.style.color='#0d9488';statusEl.textContent="Application submitted! We'll be in touch.";
+        document.querySelectorAll('#tabApply input,#tabApply textarea,#tabApply select').forEach(el=>el.value='');
+      } else {
+        statusEl.style.color='#dc2626';statusEl.textContent='Something went wrong. Please try again or WhatsApp us.';
+      }
+    })
+    .catch(()=>{statusEl.style.display='block';statusEl.style.color='#dc2626';statusEl.textContent='Could not reach the server. Please try again or WhatsApp us.';})
+    .finally(()=>{btn.disabled=false;btn.textContent='Submit Application →';});
+}
+
+function submitHirer(){
+  const company = document.getElementById('hirer-company').value.trim();
+  const email = document.getElementById('hirer-email').value.trim();
+  const phone = document.getElementById('hirer-phone').value.trim();
+  const talent = document.getElementById('hirer-talent').value.trim();
+  const message = document.getElementById('hirer-message').value.trim();
+  const statusEl = document.getElementById('hirer-status');
+  const btn = document.getElementById('hirer-submit');
+
+  if(!company || !email || !message){
+    statusEl.style.display='block';statusEl.style.color='#dc2626';
+    statusEl.textContent='Please fill in your company, email, and project details.';
+    return;
+  }
+  btn.disabled=true;btn.textContent='Submitting…';statusEl.style.display='none';
+
+  const fd = new FormData();
+  fd.append('company',company);fd.append('email',email);fd.append('phone',phone);
+  fd.append('talent',talent);fd.append('message',message);
+
+  fetch(HIRER_ENDPOINT,{method:'POST',body:fd})
+    .then(r=>r.text())
+    .then(t=>{
+      statusEl.style.display='block';
+      if(t.toLowerCase().includes('success')){
+        statusEl.style.color='#0d9488';statusEl.textContent="Request sent! We'll reach out shortly.";
+        document.querySelectorAll('#tabHire input,#tabHire textarea,#tabHire select').forEach(el=>el.value='');
+      } else {
+        statusEl.style.color='#dc2626';statusEl.textContent='Something went wrong. Please try again or WhatsApp us.';
+      }
+    })
+    .catch(()=>{statusEl.style.display='block';statusEl.style.color='#dc2626';statusEl.textContent='Could not reach the server. Please try again or WhatsApp us.';})
+    .finally(()=>{btn.disabled=false;btn.textContent='Request Talent →';});
+}
+</script>
+</body>
+</html>
