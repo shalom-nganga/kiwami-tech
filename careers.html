@@ -395,8 +395,17 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
 <a class="fwa" href="https://wa.me/254110436849" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
 
 <script>
-function toggleMenu(){const btn=document.getElementById('hamBtn'),menu=document.getElementById('mobileMenu');btn.classList.toggle('open');menu.classList.toggle('open');}
-function toggleSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
+function toggleMenu(){
+  const btn=document.getElementById('hamBtn'),
+  menu=document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+
+function toggleSub(el){
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
 
 function switchTab(tab){
   document.getElementById('tabApplyBtn').classList.toggle('active', tab==='apply');
@@ -405,79 +414,165 @@ function switchTab(tab){
   document.getElementById('tabHire').classList.toggle('active', tab==='hire');
 }
 
-// ⚠️ Point these to your actual PHP endpoints once ready
-const JOBSEEKER_ENDPOINT = "jobseeker-apply.php";
-const HIRER_ENDPOINT = "request-talent.php";
+// 🔴 ENDPOINTS (update later when PHP is ready)
+const JOBSEEKER_ENDPOINT = "save_application.php";
+const HIRER_ENDPOINT = "save_talent.php";
 
+/* ---------------------------
+   JOB SEEKER FORM
+----------------------------*/
 function submitJobseeker(){
+
   const name = document.getElementById('jobseeker-name').value.trim();
   const email = document.getElementById('jobseeker-email').value.trim();
   const phone = document.getElementById('jobseeker-phone').value.trim();
-  const role = document.getElementById('jobseeker-role').value.trim();
+  const role = document.getElementById('jobseeker-role').value;
   const link = document.getElementById('jobseeker-link').value.trim();
   const message = document.getElementById('jobseeker-message').value.trim();
+
   const statusEl = document.getElementById('jobseeker-status');
   const btn = document.getElementById('jobseeker-submit');
 
-  if(!name || !email || !message){
-    statusEl.style.display='block';statusEl.style.color='#dc2626';
-    statusEl.textContent='Please fill in your name, email, and experience.';
+  // reset status
+  statusEl.style.display='none';
+
+  // validation
+  if(!name || !email || !role || !message){
+    statusEl.style.display='block';
+    statusEl.style.color='#dc2626';
+    statusEl.textContent='Please fill in all required fields.';
     return;
   }
-  btn.disabled=true;btn.textContent='Submitting…';statusEl.style.display='none';
+
+  // email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailPattern.test(email)){
+    statusEl.style.display='block';
+    statusEl.style.color='#dc2626';
+    statusEl.textContent='Please enter a valid email address.';
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent='Submitting…';
 
   const fd = new FormData();
-  fd.append('name',name);fd.append('email',email);fd.append('phone',phone);
-  fd.append('role',role);fd.append('link',link);fd.append('message',message);
+  fd.append('name',name);
+  fd.append('email',email);
+  fd.append('phone',phone);
+  fd.append('role',role);
+  fd.append('link',link);
+  fd.append('message',message);
 
-  fetch(JOBSEEKER_ENDPOINT,{method:'POST',body:fd})
-    .then(r=>r.text())
-    .then(t=>{
-      statusEl.style.display='block';
-      if(t.toLowerCase().includes('success')){
-        statusEl.style.color='#0d9488';statusEl.textContent="Application submitted! We'll be in touch.";
-        document.querySelectorAll('#tabApply input,#tabApply textarea,#tabApply select').forEach(el=>el.value='');
-      } else {
-        statusEl.style.color='#dc2626';statusEl.textContent='Something went wrong. Please try again or WhatsApp us.';
-      }
-    })
-    .catch(()=>{statusEl.style.display='block';statusEl.style.color='#dc2626';statusEl.textContent='Could not reach the server. Please try again or WhatsApp us.';})
-    .finally(()=>{btn.disabled=false;btn.textContent='Submit Application →';});
+  fetch(JOBSEEKER_ENDPOINT,{
+    method:'POST',
+    body:fd
+  })
+  .then(r=>{
+    if(!r.ok) throw new Error("Network error");
+    return r.json();
+  })
+  .then(data=>{
+    statusEl.style.display='block';
+
+    if(data.status === "success"){
+      statusEl.style.color='#0d9488';
+      statusEl.textContent=data.message || "Application submitted successfully.";
+
+      document.querySelectorAll('#tabApply input,#tabApply textarea,#tabApply select')
+        .forEach(el=>el.value='');
+
+    }else{
+      statusEl.style.color='#dc2626';
+      statusEl.textContent=data.message || "Submission failed.";
+    }
+  })
+  .catch(()=>{
+    statusEl.style.display='block';
+    statusEl.style.color='#dc2626';
+    statusEl.textContent='Server error. Please try again later.';
+  })
+  .finally(()=>{
+    btn.disabled=false;
+    btn.textContent='Submit Application →';
+  });
 }
 
+
+/* ---------------------------
+   HIRER FORM
+----------------------------*/
 function submitHirer(){
+
   const company = document.getElementById('hirer-company').value.trim();
   const email = document.getElementById('hirer-email').value.trim();
   const phone = document.getElementById('hirer-phone').value.trim();
-  const talent = document.getElementById('hirer-talent').value.trim();
+  const talent = document.getElementById('hirer-talent').value;
   const message = document.getElementById('hirer-message').value.trim();
+
   const statusEl = document.getElementById('hirer-status');
   const btn = document.getElementById('hirer-submit');
 
-  if(!company || !email || !message){
-    statusEl.style.display='block';statusEl.style.color='#dc2626';
-    statusEl.textContent='Please fill in your company, email, and project details.';
+  statusEl.style.display='none';
+
+  // validation
+  if(!company || !email || !talent || !message){
+    statusEl.style.display='block';
+    statusEl.style.color='#dc2626';
+    statusEl.textContent='Please fill in all required fields.';
     return;
   }
-  btn.disabled=true;btn.textContent='Submitting…';statusEl.style.display='none';
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailPattern.test(email)){
+    statusEl.style.display='block';
+    statusEl.style.color='#dc2626';
+    statusEl.textContent='Please enter a valid email address.';
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent='Submitting…';
 
   const fd = new FormData();
-  fd.append('company',company);fd.append('email',email);fd.append('phone',phone);
-  fd.append('talent',talent);fd.append('message',message);
+  fd.append('company',company);
+  fd.append('email',email);
+  fd.append('phone',phone);
+  fd.append('talent',talent);
+  fd.append('message',message);
 
-  fetch(HIRER_ENDPOINT,{method:'POST',body:fd})
-    .then(r=>r.text())
-    .then(t=>{
-      statusEl.style.display='block';
-      if(t.toLowerCase().includes('success')){
-        statusEl.style.color='#0d9488';statusEl.textContent="Request sent! We'll reach out shortly.";
-        document.querySelectorAll('#tabHire input,#tabHire textarea,#tabHire select').forEach(el=>el.value='');
-      } else {
-        statusEl.style.color='#dc2626';statusEl.textContent='Something went wrong. Please try again or WhatsApp us.';
-      }
-    })
-    .catch(()=>{statusEl.style.display='block';statusEl.style.color='#dc2626';statusEl.textContent='Could not reach the server. Please try again or WhatsApp us.';})
-    .finally(()=>{btn.disabled=false;btn.textContent='Request Talent →';});
+  fetch(HIRER_ENDPOINT,{
+    method:'POST',
+    body:fd
+  })
+  .then(r=>{
+    if(!r.ok) throw new Error("Network error");
+    return r.json();
+  })
+  .then(data=>{
+    statusEl.style.display='block';
+
+    if(data.status === "success"){
+      statusEl.style.color='#0d9488';
+      statusEl.textContent=data.message || "Request sent successfully.";
+
+      document.querySelectorAll('#tabHire input,#tabHire textarea,#tabHire select')
+        .forEach(el=>el.value='');
+
+    }else{
+      statusEl.style.color='#dc2626';
+      statusEl.textContent=data.message || "Request failed.";
+    }
+  })
+  .catch(()=>{
+    statusEl.style.display='block';
+    statusEl.style.color='#dc2626';
+    statusEl.textContent='Server error. Please try again later.';
+  })
+  .finally(()=>{
+    btn.disabled=false;
+    btn.textContent='Request Talent →';
+  });
 }
 </script>
 </body>

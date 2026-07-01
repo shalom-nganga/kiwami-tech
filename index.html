@@ -11,14 +11,10 @@
 :root{--navy:#0d1b3e;--navy2:#142248;--card:#182d58;--gold:#f5c518;--gold2:#d4a800;--teal:#0d9488;--white:#fff;--bg:#f7f8fc;--text:#111827;--mid:#4b5563;--muted:#9ca3af;--border:#e5e7eb;--J:'Plus Jakarta Sans',sans-serif;--F:'Fraunces',serif}
 html{scroll-behavior:smooth}
 body{font-family:var(--J);background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6}
-
-/* TICKER */
 .ticker{background:var(--gold);overflow:hidden;height:34px;display:flex;align-items:center}
 .ttrack{display:flex;animation:tick 38s linear infinite;white-space:nowrap}
 .ttrack span{font-size:.71rem;font-weight:700;color:var(--navy);padding:0 2.5rem}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* NAV */
 .nwrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;padding:0 1.5rem;position:relative}
 .logo{font-family:var(--J);font-weight:800;font-size:.92rem;color:var(--navy);text-decoration:none;letter-spacing:.07em;white-space:nowrap;margin-right:2rem;flex-shrink:0}
@@ -36,15 +32,11 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .ndd a:hover{background:var(--bg);color:var(--navy);padding-left:1.4rem}
 .nhire{margin-left:auto;background:var(--navy);color:var(--white);font-family:var(--J);font-weight:700;font-size:.78rem;padding:.44rem 1.15rem;border-radius:100px;text-decoration:none;border:2px solid var(--navy);transition:all .15s;white-space:nowrap;flex-shrink:0}
 .nhire:hover{background:transparent;color:var(--navy)}
-
-/* HAMBURGER */
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none;margin-left:auto;flex-shrink:0}
 .ham span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .ham.open span:nth-child(2){opacity:0}
 .ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-
-/* MOBILE MENU */
 .mobile-menu{display:none;position:absolute;top:60px;left:0;right:0;background:var(--white);border-top:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:499;padding:.5rem 0}
 .mobile-menu.open{display:block}
 .mob-link{display:block;padding:.75rem 1.5rem;font-size:.88rem;font-weight:600;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);transition:all .15s}
@@ -58,8 +50,6 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .mob-sub a{display:block;padding:.6rem 2rem;font-size:.82rem;font-weight:500;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);transition:all .15s}
 .mob-sub a:hover{color:var(--navy);padding-left:2.25rem}
 .mob-hire{display:block;padding:.85rem 1.5rem;font-size:.88rem;font-weight:700;color:var(--navy);text-decoration:none;text-align:center;background:var(--gold);margin:.75rem 1rem;border-radius:8px}
-
-/* HERO */
 .hero{background:var(--navy);overflow:hidden;position:relative}
 .hero::before{content:'';position:absolute;top:-120px;left:35%;width:500px;height:500px;background:radial-gradient(circle,rgba(245,197,24,.06),transparent 65%);pointer-events:none}
 .hero-in{max-width:1300px;margin:0 auto;padding:4.5rem 2rem 3rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem;align-items:center}
@@ -73,8 +63,6 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
 .ghost-w{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color .15s}
 .ghost-w:hover{color:var(--white)}
-
-/* QUICK ACCESS */
 .qa-panel{background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.07);padding:1rem 1rem 1.1rem;position:relative;z-index:1}
 .qa-lbl{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center;margin-bottom:.75rem}
 .qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:10px;overflow:hidden}
@@ -83,8 +71,6 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .qa-ic{font-size:1.2rem;flex-shrink:0}
 .qa-t{font-family:var(--J);font-weight:700;font-size:.75rem;color:var(--white);line-height:1.2;display:block;margin-bottom:2px}
 .qa-s{font-size:.62rem;color:rgba(255,255,255,.42);line-height:1.3;display:block}
-
-/* STATS */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--border)}
 .sc{padding:2.25rem 1.5rem;text-align:center;border-right:1px solid var(--border);position:relative;overflow:hidden}
 .sc:last-child{border-right:none}
@@ -97,8 +83,6 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .sc.sn .snum{color:var(--gold)}.sc.sg .snum{color:var(--navy)}.sc.st .snum{color:var(--teal);font-size:1.6rem}
 .slbl{font-size:.74rem;color:var(--muted);margin-top:5px}
 .sc.sn .slbl{color:rgba(255,255,255,.45)}.sc.sg .slbl{color:rgba(13,27,62,.62)}.sc.st .slbl{color:var(--teal);font-size:.68rem}
-
-/* SHARED */
 .sec{padding:4rem 1.5rem;max-width:1200px;margin:0 auto}
 .alt{padding:4rem 1.5rem;background:var(--bg)}
 .alt .in,.dark .in{max-width:1200px;margin:0 auto}
@@ -116,8 +100,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .btn-navy:hover{background:var(--navy2);transform:translateY(-1px)}
 .btn-outline-w{background:transparent;color:var(--white);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.55rem 1.3rem;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:all .15s;display:inline-flex;align-items:center;gap:5px}
 .btn-outline-w:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
-
-/* 8-SERVICE GRID */
 .sg8{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:2.75rem}
 .si{background:var(--white);padding:1.7rem 1.4rem;display:flex;flex-direction:column;gap:.35rem;text-decoration:none;color:inherit;transition:all .2s;position:relative;overflow:hidden}
 .si::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .2s;transform-origin:left}
@@ -126,8 +108,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .si-t{font-family:var(--J);font-weight:700;font-size:.88rem;color:var(--navy)}
 .si-d{font-size:.74rem;color:var(--muted);line-height:1.45}
 .si-l{font-size:.68rem;font-weight:700;color:var(--navy);margin-top:auto;padding-top:.45rem}
-
-/* ABOUT */
 .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:1.5rem}
 .wl{display:flex;flex-direction:column;gap:1.15rem;margin-top:1.5rem}
 .wi{display:flex;gap:.85rem;align-items:flex-start}
@@ -145,8 +125,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .skmeta span:first-child{color:rgba(255,255,255,.58)}.skmeta span:last-child{color:var(--gold);font-weight:700}
 .sktrack{height:5px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
 .skfill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:100px;width:0;transition:width 1.1s ease}
-
-/* WHY US */
 .wu-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .wu-sub{font-size:.9rem;color:var(--mid);line-height:1.72;margin-bottom:1.75rem;max-width:480px}
 .acc-wrap{display:flex;flex-direction:column;gap:.6rem}
@@ -169,8 +147,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .wu-c1 .wc-num{color:var(--gold)}.wu-c2 .wc-num{color:var(--navy)}.wu-c3 .wc-num{color:var(--navy)}.wu-c4 .wc-num{color:var(--teal);font-size:1.6rem}
 .wc-lbl{font-size:.74rem}
 .wu-c1 .wc-lbl{color:rgba(255,255,255,.45)}.wu-c2 .wc-lbl{color:rgba(13,27,62,.62)}.wu-c3 .wc-lbl{color:var(--muted)}.wu-c4 .wc-lbl{color:var(--teal);font-size:.68rem}
-
-/* TESTING SERVICES */
 .tsg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.5rem}
 .tc{border:1px solid var(--border);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.45rem;background:var(--white);transition:all .2s;position:relative;overflow:hidden}
 .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transition:transform .25s;transform-origin:left}
@@ -179,8 +155,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .tc-t{font-family:var(--J);font-weight:700;font-size:.9rem;color:var(--navy)}
 .tc-d{font-size:.77rem;color:var(--muted);line-height:1.52}
 .tc-l{font-size:.71rem;font-weight:700;color:var(--navy);margin-top:auto;padding-top:.45rem}
-
-/* SCHOOL STRIP */
 .school-strip{background:linear-gradient(135deg,#1a2f60,var(--navy));border-radius:16px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;border:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;margin-top:2.5rem}
 .school-strip::before{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:70px solid rgba(245,197,24,.05)}
 .sb-tag{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem}
@@ -194,8 +168,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .cc-t{font-family:var(--J);font-weight:700;font-size:.87rem;color:var(--navy)}
 .cc-d{font-size:.75rem;color:var(--muted);line-height:1.48}
 .cc-l{font-size:.69rem;font-weight:700;color:var(--gold);margin-top:auto;padding-top:.4rem}
-
-/* TESTIMONIALS */
 .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.25rem}
 .tec{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.85rem;transition:box-shadow .2s}
 .tec:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
@@ -206,8 +178,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .av1{background:#bfdbfe;color:#1e40af}.av2{background:#fed7aa;color:#9a3412}.av3{background:#bbf7d0;color:#166534}
 .an{font-family:var(--J);font-weight:700;font-size:.82rem;color:var(--navy)}
 .ac{font-size:.68rem;color:var(--muted)}
-
-/* BOOTCAMP CTA */
 .bc{background:linear-gradient(135deg,var(--navy),#0a1530);padding:4rem 1.5rem;position:relative;overflow:hidden}
 .bc::before{content:'';position:absolute;right:-60px;top:-80px;width:380px;height:380px;border-radius:50%;border:80px solid rgba(255,255,255,.025)}
 .bc::after{content:'';position:absolute;left:40%;bottom:-60px;width:240px;height:240px;border-radius:50%;border:60px solid rgba(245,197,24,.04)}
@@ -219,8 +189,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .bc-meta span{font-size:.79rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
 .bc-r{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
 .bc-note{font-size:.63rem;color:rgba(255,255,255,.3)}
-
-/* FAQ */
 .faq-wrap{max-width:740px;margin:2.5rem auto 0}
 .fi{border-bottom:1px solid var(--border)}
 .fq{width:100%;background:none;border:none;text-align:left;padding:1.05rem 0;font-family:var(--J);font-size:.88rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
@@ -228,8 +196,6 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .fq.op .ico{transform:rotate(45deg)}
 .fa{font-size:.82rem;color:var(--mid);line-height:1.68;display:none;padding-bottom:.9rem}
 .fa.op{display:block}
-
-/* CONTACT */
 .cw{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;margin-top:2.75rem}
 .ci{display:flex;flex-direction:column;gap:1.1rem}
 .ci-row{display:flex;gap:.85rem;align-items:flex-start}
@@ -247,10 +213,10 @@ h2.H em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);background:var(--white)}
 .fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
 .fg textarea{resize:vertical;min-height:105px}
+/* honeypot — hide from humans, visible to bots */
+.hp-field{opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;pointer-events:none}
 .map-box{border-radius:11px;overflow:hidden;border:1px solid var(--border);margin-top:1.25rem;width:100%;height:260px;position:relative}
 .map-box iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block}
-
-/* FOOTER */
 footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(--gold)}
 .fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.85)}
 .fb-name{font-family:var(--J);font-weight:800;font-size:.98rem;color:var(--white);letter-spacing:.05em;margin-bottom:.65rem}
@@ -263,49 +229,33 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
 .fb2 p{font-size:.7rem;color:rgba(255,255,255,.85)}
 .fwa{position:fixed;bottom:1.25rem;right:1.25rem;z-index:999;background:#25d366;color:var(--white);border-radius:100px;padding:.5rem .9rem;font-family:var(--J);font-weight:700;font-size:.74rem;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .15s}
 .fwa:hover{opacity:.9;transform:scale(1.03)}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .sg8{grid-template-columns:repeat(2,1fr)}
-  .tsg,.cg{grid-template-columns:repeat(2,1fr)}
-}
+@media(max-width:1100px){.sg8{grid-template-columns:repeat(2,1fr)}.tsg,.cg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:960px){
-  .nmenu{display:none}
-  .nhire{display:none}
-  .ham{display:flex}
+  .nmenu{display:none}.nhire{display:none}.ham{display:flex}
   nav{padding:0 1.25rem}
   .hero-in{grid-template-columns:1fr;min-height:auto;padding:3rem 1.25rem 2rem}
   .qa-panel{border-radius:14px;margin-top:2rem;padding:.85rem .85rem 1rem}
   .qa-grid{grid-template-columns:repeat(2,1fr)}
-  .hero h1{font-size:clamp(2.4rem,6vw,3.5rem)}
-  .hero-sub{max-width:100%}
-  .stats{grid-template-columns:1fr 1fr}
-  .sc{padding:1.5rem 1rem}
-  .snum{font-size:1.8rem}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.5rem)}.hero-sub{max-width:100%}
+  .stats{grid-template-columns:1fr 1fr}.sc{padding:1.5rem 1rem}.snum{font-size:1.8rem}
   .ab-grid,.cw,.wu-grid{grid-template-columns:1fr;gap:2.5rem}
-  .tsg{grid-template-columns:1fr 1fr}
-  .tg{grid-template-columns:1fr}
-  .cg{grid-template-columns:1fr 1fr}
+  .tsg{grid-template-columns:1fr 1fr}.tg{grid-template-columns:1fr}.cg{grid-template-columns:1fr 1fr}
   .fg2{grid-template-columns:1fr 1fr;gap:2rem}
   .bc-in{flex-direction:column}.bc-r{align-items:flex-start}
-  .wu-vis{position:static}
-  .fr{grid-template-columns:1fr 1fr}
+  .wu-vis{position:static}.fr{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
   .hero h1{font-size:2.2rem}
   .hero-btns{flex-direction:column;align-items:flex-start}
   .btn-gold,.ghost-w{width:fit-content}
-  .stats{grid-template-columns:1fr 1fr}
-  .sg8{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}.sg8{grid-template-columns:1fr 1fr}
   .tsg,.tg,.cg{grid-template-columns:1fr}
-  .fg2{grid-template-columns:1fr}
-  .fr{grid-template-columns:1fr}
+  .fg2{grid-template-columns:1fr}.fr{grid-template-columns:1fr}
   .bc-meta{flex-direction:column;gap:.5rem}
   .sb-btns{flex-direction:column}
   .school-strip{flex-direction:column;align-items:flex-start}
   .sec,.alt .in,.dark .in{padding-left:1rem;padding-right:1rem}
-  .cw{gap:2rem}
-  .faq-wrap{padding:0}
+  .cw{gap:2rem}.faq-wrap{padding:0}
 }
 </style>
 </head>
@@ -340,7 +290,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
     </div>
     <a class="nhire" href="careers.html">Hire Talent</a>
     <button class="ham" id="hamBtn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-
     <div class="mobile-menu" id="mobileMenu">
       <a class="mob-link active" href="#">Home</a>
       <a class="mob-link" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
@@ -358,7 +307,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </nav>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-in">
     <div>
@@ -388,7 +336,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </div>
 
-<!-- STATS -->
 <div class="stats">
   <div class="sc sn"><div class="snum">50+</div><div class="slbl">Professionals trained since founding</div></div>
   <div class="sc sg"><div class="snum">92%</div><div class="slbl">ISTQB pass rate</div></div>
@@ -396,7 +343,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   <div class="sc st"><div class="snum">ISTQB</div><div class="slbl">Certified trainers · International standard</div></div>
 </div>
 
-<!-- SERVICES -->
 <section class="sec" id="services">
   <div class="eye">Our Services</div>
   <h2 class="H">Comprehensive QA solutions<br>for <em>every need.</em></h2>
@@ -414,7 +360,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   <div style="text-align:center;margin-top:2rem"><a class="btn-navy" href="services.html">View All Services →</a></div>
 </section>
 
-<!-- ABOUT -->
 <div class="alt" id="about">
   <div class="in">
     <div class="eye">About Us</div>
@@ -448,7 +393,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </div>
 
-<!-- WHY US -->
 <section class="sec" id="why">
   <div class="wu-grid">
     <div>
@@ -472,7 +416,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </section>
 
-<!-- TESTING SERVICES -->
 <div class="alt">
   <div class="in">
     <div class="eye">Software Testing Services</div>
@@ -490,7 +433,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </div>
 
-<!-- SCHOOL -->
 <div class="dark" id="school">
   <div class="in">
     <div class="eye lt">Kiwami School</div>
@@ -519,7 +461,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
 <section class="sec">
   <div class="eye">Alumni Stories</div>
   <h2 class="H">From our students,<br><em>in their own words.</em></h2>
@@ -530,7 +471,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </section>
 
-<!-- BOOTCAMP CTA -->
 <div class="bc">
   <div class="bc-in">
     <div>
@@ -545,7 +485,6 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   </div>
 </div>
 
-<!-- FAQ -->
 <section class="sec" id="faq">
   <div style="text-align:center">
     <div class="eye" style="justify-content:center">FAQ</div>
@@ -588,17 +527,30 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
           <select id="cf-subject"><option value="">Select subject…</option><option>Testing as a Service</option><option>Bug Bash Request</option><option>Request Consultancy Services</option><option>Hire a Talent</option><option>Request Demo For Our SAAS</option><option>Training / Kiwami School</option><option>Community / Events</option><option>Other</option></select>
         </div>
         <div class="fg"><label>Message</label><textarea id="cf-message" placeholder="Tell us about your project or inquiry…"></textarea></div>
-        <button class="btn-navy" id="cf-submit" style="width:fit-content;padding:.6rem 1.4rem" onclick="submitContactForm()">Send Message →</button>
+
+        <!-- HONEYPOT — invisible to humans, bots fill it in and get rejected -->
+        <div class="hp-field" aria-hidden="true">
+          <label>Leave this field empty</label>
+          <input type="text" name="website" id="cf-honeypot" tabindex="-1" autocomplete="off"/>
+        </div>
+
+        <button type="button" class="btn-navy" id="cf-submit" style="width:fit-content;padding:.6rem 1.4rem" onclick="submitContactForm()">
+            Send Message →
+        </button>
         <div id="cf-status" style="font-size:.8rem;margin-top:.25rem;display:none"></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="fg2">
-<div class="fb"><div class="fb-name">KIWAMI TECH</div><p>Africa's leading QA company delivering expert testing services, world-class training, and a thriving community of software quality professionals.</p>,<br> <div class="fb-ct">📍 124 Manyani E Rd Nairobi, Kenya<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div></div>    <div class="fc"><h5>Useful Links</h5><a href="#">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+    <div class="fb">
+      <div class="fb-name">KIWAMI TECH</div>
+      <p>Africa's leading QA company delivering expert testing services, world-class training, and a thriving community of software quality professionals.</p>
+      <div class="fb-ct">📍 124 Manyani E Rd Nairobi, Kenya<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div>
+    </div>
+    <div class="fc"><h5>Useful Links</h5><a href="#">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
     <div class="fc"><h5>Our Services</h5><a href="services.html#manual">Manual Testing</a><a href="services.html#automation">Automation Testing</a><a href="services.html#nonfunctional">Non-Functional Testing</a><a href="services.html#api">API Testing</a><a href="services.html#ussd">USSD Testing</a><a href="services.html#devicefarm">Device Farm</a></div>
     <div class="fc"><h5>Community</h5><a href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a><a href="https://kiwamitech.com/sqasummit2026" target="_blank">SQA Summit 2026</a><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA Summit 2025</a><a href="careers.html">Job Portal</a><a href="https://kiwamitestcloud.com/" target="_blank">Kiwami Test Cloud</a></div>
   </div>
@@ -616,60 +568,103 @@ const fills=document.querySelectorAll('.skfill');
 const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.style.width=x.target.style.getPropertyValue('--w')})},{threshold:.3});
 fills.forEach(f=>ob.observe(f));
 
-// === CONTACT FORM SUBMISSION ===
-// ⚠️ Replace this URL with the actual path to your PHP script on the server
-const CONTACT_ENDPOINT = "contact.php";
+const CONTACT_ENDPOINT = "save_contact.php";
 
-function submitContactForm(){
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const subject = document.getElementById('cf-subject').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
-  const statusEl = document.getElementById('cf-status');
-  const btn = document.getElementById('cf-submit');
+async function submitContactForm() {
 
-  if(!name || !email || !message){
-    statusEl.style.display='block';
-    statusEl.style.color='#dc2626';
-    statusEl.textContent='Please fill in your name, email, and message.';
-    return;
-  }
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value;
+    const message = document.getElementById('cf-message').value.trim();
+    const honeypot = document.getElementById('cf-honeypot').value;
 
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-  statusEl.style.display='none';
+    const statusEl = document.getElementById('cf-status');
+    const btn = document.getElementById('cf-submit');
 
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('email', email);
-  formData.append('subject', subject);
-  formData.append('message', message);
+    // Ignore bots
+    if (honeypot !== "") {
+        return;
+    }
 
-  fetch(CONTACT_ENDPOINT, { method: 'POST', body: formData })
-    .then(res => res.text())
-    .then(text => {
-      statusEl.style.display='block';
-      if(text.toLowerCase().includes('success')){
-        statusEl.style.color='#0d9488';
-        statusEl.textContent="Message sent! We'll get back to you soon.";
-        document.getElementById('cf-name').value='';
-        document.getElementById('cf-email').value='';
-        document.getElementById('cf-subject').value='';
-        document.getElementById('cf-message').value='';
-      } else {
-        statusEl.style.color='#dc2626';
-        statusEl.textContent='Something went wrong. Please try again or WhatsApp us.';
-      }
-    })
-    .catch(() => {
-      statusEl.style.display='block';
-      statusEl.style.color='#dc2626';
-      statusEl.textContent='Could not reach the server. Please try again or WhatsApp us.';
-    })
-    .finally(() => {
-      btn.disabled = false;
-      btn.textContent = 'Send Message →';
-    });
+    // Clear previous message
+    statusEl.style.display = 'none';
+    statusEl.textContent = '';
+
+    // Validation
+    if (!name || !email || !subject || !message) {
+        statusEl.style.display = 'block';
+        statusEl.style.color = '#dc2626';
+        statusEl.textContent = 'Please complete all required fields.';
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        statusEl.style.display = 'block';
+        statusEl.style.color = '#dc2626';
+        statusEl.textContent = 'Please enter a valid email address.';
+        return;
+    }
+
+    // Disable button
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    // Prepare data
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("subject", subject);
+    formData.append("message", message);
+    formData.append("website", honeypot);
+
+    try {
+
+        const response = await fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error("Server returned an error.");
+        }
+
+        const data = await response.json();
+
+        statusEl.style.display = "block";
+
+        if (data.status === "success") {
+
+            statusEl.style.color = "#0d9488";
+            statusEl.textContent = data.message;
+
+            // Clear form
+            document.getElementById("cf-name").value = "";
+            document.getElementById("cf-email").value = "";
+            document.getElementById("cf-subject").selectedIndex = 0;
+            document.getElementById("cf-message").value = "";
+
+        } else {
+
+            statusEl.style.color = "#dc2626";
+            statusEl.textContent = data.message || "Unable to send your message.";
+
+        }
+
+    } catch (error) {
+
+        statusEl.style.display = "block";
+        statusEl.style.color = "#dc2626";
+        statusEl.textContent = "Could not connect to the server. Please try again.";
+
+    } finally {
+
+        btn.disabled = false;
+        btn.textContent = "Send Message →";
+
+    }
 }
 </script>
 </body>
