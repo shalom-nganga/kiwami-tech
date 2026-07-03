@@ -55,7 +55,7 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .bc a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .15s}.bc a:hover{color:var(--gold)}
 .bc span{color:rgba(255,255,255,.22)}.bc .cur{color:rgba(255,255,255,.7);font-weight:500}
 .ph-in h1{font-family:var(--J);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--white);letter-spacing:-.025em;margin-bottom:.65rem;line-height:1.06}
-.ph-in h1 em{font-family:var(--F);font-style:italic;color:var(--gold);font-weight:700}
+.ph-in h1 em{font-family:var(--J);font-style:normal;color:var(--gold);font-weight:800;display:inline}
 .ph-in p{font-size:.94rem;color:rgba(255,255,255,.52);max-width:520px;line-height:1.72}
 /* SHARED */
 .sec{padding:5rem 2rem;max-width:1200px;margin:0 auto}
@@ -126,15 +126,15 @@ nav{max-width:1380px;margin:0 auto;height:60px;display:flex;align-items:center;p
 .fwa:hover{opacity:.9;transform:scale(1.03)}
 /* FOOTER */
 footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(--gold)}
-.fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.85)}
 .fb-name{font-family:var(--J);font-weight:800;font-size:.98rem;color:var(--white);letter-spacing:.05em;margin-bottom:.65rem}
 .fb p{font-size:.76rem;color:#c7cedb;line-height:1.7;max-width:240px}
-.fb-ct{margin-top:1rem;font-size:.75rem;color:#c7cedb;line-height:1.9}
-.fc h5{font-family:var(--J);font-weight:700;font-size:.72rem;color:rgba(255,255,255,.82);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.9rem}
-.fc a{display:block;font-size:.76rem;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:.4rem;transition:all .15s}
+.fb-ct{margin-top:1rem;font-size:.75rem;color:rgba(255,255,255,.85);line-height:1.9}
+.fc h5{font-family:var(--J);font-weight:700;font-size:.72rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.9rem}
+.fc a{display:block;font-size:.76rem;color:rgba(255,255,255,.85);text-decoration:none;margin-bottom:.4rem;transition:all .15s}
 .fc a:hover{color:var(--white);padding-left:4px}
 .fb2{max-width:1200px;margin:0 auto;padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
-.fb2 p{font-size:.7rem;color:rgba(255,255,255,.25)}
+.fb2 p{font-size:.7rem;color:rgba(255,255,255,.85)}
 @media(max-width:960px){
   .ab-intro,.hww{grid-template-columns:1fr;gap:2.5rem}
   .diagram{display:none}
@@ -157,67 +157,19 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
   .fg2{grid-template-columns:1fr}
   .sec,.alt .in{padding-left:1rem;padding-right:1rem}
 }
-
-/* ══════════════ SERVICE FINDER POPUP ══════════════ */
-.cf-overlay{position:fixed;inset:0;z-index:99999;background:rgba(13,27,62,.78);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:1.25rem;opacity:0;pointer-events:none;transition:opacity .3s ease}
-.cf-overlay.show{opacity:1;pointer-events:auto}
-.cf-box{background:var(--white);border-radius:20px;max-width:34rem;width:100%;max-height:92vh;overflow-y:auto;padding:2.25rem 2rem 1.75rem;position:relative;box-shadow:0 30px 90px rgba(13,27,62,.4);transform:translateY(24px) scale(.97);transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.cf-overlay.show .cf-box{transform:translateY(0) scale(1)}
-.cf-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;border:none;background:var(--bg);color:var(--muted);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
-.cf-close:hover{background:var(--border);color:var(--navy)}
-.cf-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(13,148,136,.1);color:var(--teal);border-radius:100px;padding:.35rem .85rem;font-size:.7rem;font-weight:700;margin-bottom:1.1rem}
-.cf-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
-.cf-progress{display:flex;gap:5px;margin-bottom:1.35rem}
-.cf-dot{height:4px;flex:1;background:var(--border);border-radius:2px;overflow:hidden}
-.cf-dot span{display:block;height:100%;width:0;background:var(--navy);transition:width .3s}
-.cf-dot.done span{width:100%}
-.cf-step-lbl{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.cf-q{font-family:var(--J);font-weight:800;font-size:1.4rem;color:var(--navy);line-height:1.3;margin-bottom:1.4rem;letter-spacing:-.01em}
-.cf-opts{display:flex;flex-direction:column;gap:.6rem}
-.cf-opt{text-align:left;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.9rem 1.05rem;font-family:var(--J);font-weight:600;font-size:.85rem;color:var(--text);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%}
-.cf-opt:hover{border-color:var(--navy);background:var(--navy);color:var(--white)}
-.cf-opt .go{opacity:0;transition:opacity .15s;flex-shrink:0}
-.cf-opt:hover .go{opacity:1}
-.cf-back{margin-top:1.1rem;font-size:.78rem;font-weight:700;color:var(--muted);background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:var(--J)}
-.cf-back:hover{color:var(--navy)}
-.cf-result{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.35rem;padding-top:.5rem}
-.cf-badge{font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:rgba(13,148,136,.1);padding:.35rem .85rem;border-radius:100px;margin-bottom:.5rem}
-.cf-result h2{font-family:var(--J);font-weight:800;font-size:1.55rem;color:var(--navy);line-height:1.2;letter-spacing:-.02em}
-.cf-result .sub{font-size:.78rem;font-weight:700;color:var(--gold2);margin-top:.15rem}
-.cf-result p{font-size:.88rem;color:var(--mid);line-height:1.7;max-width:26rem;margin-top:.6rem}
-.cf-result-btns{display:flex;gap:.65rem;margin-top:1.5rem;flex-wrap:wrap;justify-content:center}
-.cf-btn-gold{background:var(--gold);color:var(--navy);font-family:var(--J);font-weight:700;font-size:.84rem;padding:.7rem 1.5rem;border-radius:9px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer}
-.cf-btn-gold:hover{background:var(--gold2)}
-.cf-btn-ghost{background:transparent;color:var(--navy);font-weight:700;font-size:.84rem;padding:.65rem 1.35rem;border-radius:9px;text-decoration:none;border:1.5px solid var(--border);display:inline-flex;align-items:center;gap:6px}
-.cf-btn-ghost:hover{background:var(--bg)}
-.cf-restart{margin-top:1.25rem;font-size:.78rem;font-weight:700;color:var(--muted);background:none;border:none;cursor:pointer;font-family:var(--J)}
-.cf-restart:hover{color:var(--navy)}
-@media(max-width:600px){.cf-box{padding:1.75rem 1.25rem 1.5rem}.cf-q{font-size:1.1rem}}
-
-.cf-reopen{position:fixed;bottom:5.6rem;right:1.25rem;z-index:998;background:var(--navy);color:var(--white);font-weight:700;font-size:.76rem;padding:.65rem 1rem;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(13,27,62,.3);display:flex;align-items:center;gap:.5rem;font-family:var(--J);transition:all .2s}
-.cf-reopen:hover{background:var(--navy2);transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,27,62,.4)}
-.cf-reopen .cfr-text{display:none}
-@media(max-width:600px){
-  .cf-reopen{bottom:5.2rem;right:1rem;padding:.6rem .8rem;font-size:.7rem;gap:.35rem}
-  .cf-reopen .cfr-text{display:inline}
-  .cf-reopen .cfr-full{display:none}
-}
-
 </style>
 </head>
 <body>
 
 <div class="ticker"><div class="ttrack">
-<span>🎓 Student Bootcamp — Introduction to Software Testing at <strong>Ksh 9,999</strong></span>
-    <span>🎯 Are you a university or college student? Break into Software Testing today</span>
-    <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
-    <span>🚀 Student Bootcamp — Special offer at <strong>Ksh 9,999</strong> · Click to learn more</span>
-    <span>📅 Next Cohort: August 2026 · Virtual &amp; Hybrid · Instructor-Led</span>
-    <span>🎓 Student Bootcamp — Introduction to Software Testing at <strong>Ksh 9,999</strong></span>
-    <span>🎯 Are you a university or college student? Break into Software Testing today</span>
-    <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
-    <span>🚀 Student Bootcamp — Special offer at <strong>Ksh 9,999</strong> · Click to learn more</span>
-    <span>📅 Next Cohort: August 2026 · Virtual &amp; Hybrid · Instructor-Led</span>
+  <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
+  <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
+  <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
+  <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
+  <span>🚀 Join Us for the 2DAY Software Quality Assurance Festival, 2026</span>
+  <span>📅 Day 1, Friday 10th April 2026 — Playwright Workshop</span>
+  <span>📍 Day 2, Saturday 11th April 2026 — Security Testing Featuring Dr Bright Gameli</span>
+  <span>✅ Certificate upon completion · Mentorship included · Real QA project experience</span>
 </div></div>
 
 <div class="nwrap"><nav>
@@ -226,23 +178,23 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
     <a class="nl" href="index.html">Home</a>
     <a class="nl" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
     <a class="nl" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
-    <div class="ndrop"><a class="nl" href="#">Co-operates Service <span class="arr">▼</span></a><div class="ndd"><a href="careers.html">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="index.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div></div>
-    <div class="ndrop"><a class="nl" href="#">Students Corner <span class="arr">▼</span></a><div class="ndd"><a href="#">University Testing Clubs</a><a href="https://kiwamitech.com/school/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Co-operates Service <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/careers" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="kiwamitech.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div></div>
+    <div class="ndrop"><a class="nl" href="#">Students Corner <span class="arr">▼</span></a><div class="ndd"><a href="#">University Testing Clubs</a><a href="https://kiwami-school.vercel.app/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div></div>
     <div class="ndrop"><a class="nl" href="#">Software QA Events <span class="arr">▼</span></a><div class="ndd"><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a><a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a></div></div>
   </div>
-  <a class="nhire" href="careers.html">Hire Talent</a>
+  <a class="nhire" href="careers.html" target="_blank">Hire Talent</a>
   <button class="ham" id="hamBtn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="mobile-menu" id="mobileMenu">
     <a class="mob-link active" href="index.html">Home</a>
     <a class="mob-link" href="https://kiwamitech.com/school/" target="_blank">Kiwami School</a>
     <a class="mob-link" href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a>
     <div class="mob-drop-label" onclick="toggleSub(this)">Co-operates Service <span class="arr2">▼</span></div>
-    <div class="mob-sub"><a href="careers.html">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="index.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div>
+    <div class="mob-sub"><a href="careers.html" target="_blank">Hire A Talent</a><a href="https://kiwamitech.com/bugbash" target="_blank">Request A Bug Bash</a><a href="kiwamitech.html#contact">Request Consultancy Services</a><a href="https://kiwamitestcloud.com/" target="_blank">Request Demo For Our SAAS</a></div>
     <div class="mob-drop-label" onclick="toggleSub(this)">Students Corner <span class="arr2">▼</span></div>
-    <div class="mob-sub"><a href="#">University Testing Clubs</a><a href="https://kiwamitech.com/school/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div>
+    <div class="mob-sub"><a href="#">University Testing Clubs</a><a href="https://kiwami-school.vercel.app/" target="_blank">Student Bootcamps</a><a href="#">Kiwami Kids (Robotics)</a></div>
     <div class="mob-drop-label" onclick="toggleSub(this)">Software QA Events <span class="arr2">▼</span></div>
     <div class="mob-sub"><a href="https://kiwamitech.com/sqasummit2025/" target="_blank">SQA SUMMIT 2025</a><a href="http://conference.testarsquarter.org/" target="_blank">APQEC'25 CONFERENCE</a></div>
-    <a class="mob-hire" href="careers.html">Hire Talent</a>
+    <a class="mob-hire" href="careers.html" target="_blank">Hire Talent</a>
   </div>
 </nav></div>
 
@@ -423,10 +375,9 @@ footer{background:var(--navy);padding:4rem 2rem 1.5rem;border-top:3px solid var(
 <!-- FOOTER -->
 <footer>
   <div class="fg2">
-    <div class="fb"><div class="fb-name">KIWAMI TECH</div><p>Africa's leading QA company delivering expert testing, world-class training, and a thriving QA community.</p><div class="fb-ct">📍 The Atrium, Chaka Rd. 1st Floor, Nairobi<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div></div>
-    <div class="fc"><h5>Useful Links</h5><a href="kiwamitech.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="kiwamitech.html#contact">Contact</a></div>
+<div class="fb"><div class="fb-name">KIWAMI TECH</div><p>Africa's leading QA company delivering expert testing services, world-class training, and a thriving community of software quality professionals.</p>,<br> <div class="fb-ct">📍 124 Manyani E Rd Nairobi, Kenya<br>📞 +254 110 436 849<br>✉️ info@kiwamitech.com</div></div>    <div class="fc"><h5>Useful Links</h5><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="kiwamitech.html#contact">Contact</a></div>
     <div class="fc"><h5>Our Services</h5><a href="services.html#manual">Manual Testing</a><a href="services.html#automation">Automation Testing</a><a href="services.html#nonfunctional">Non-Functional Testing</a><a href="services.html#api">API Testing</a><a href="services.html#ussd">USSD Testing</a></div>
-    <div class="fc"><h5>Community</h5><a href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a><a href="https://kiwamitech.com/sqasummit2026" target="_blank">SQA Summit 2026</a><a href="careers.html">Job Portal</a><a href="https://kiwamitestcloud.com/" target="_blank">Kiwami Test Cloud</a></div>
+    <div class="fc"><h5>Community</h5><a href="https://docs.google.com/forms/d/1GJ6Sj2eqzaXxUILFMX7lVz7b07_KDmR78JKA4vCD8Jg/" target="_blank">Kiwami Tech Community</a><a href="https://kiwamitech.com/sqasummit2026" target="_blank">SQA Summit 2026</a><a href="https://kiwamitech.com/careers" target="_blank">Job Portal</a><a href="https://kiwamitestcloud.com/" target="_blank">Kiwami Test Cloud</a></div>
   </div>
   <div class="fb2"><p>© 2026 Kiwami Tech. All Rights Reserved.</p><p>Nairobi, Kenya</p></div>
 </footer>
@@ -441,229 +392,6 @@ function ft(btn,cat){
 }
 function toggleMenu(){const btn=document.getElementById('hamBtn'),menu=document.getElementById('mobileMenu');btn.classList.toggle('open');menu.classList.toggle('open');}
 function toggleSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
-
-// ══════════════ SERVICE FINDER POPUP LOGIC ══════════════
-(function(){
-  const WA_LINK = "https://wa.me/254110436849";
-
-  const tree = {
-    start: { q:"What are you looking for today?", opts:[
-      {l:"Hire QA talent for my team", n:"result_hire"},
-      {l:"Get my software tested", n:"serviceType"},
-      {l:"Find a QA job", n:"result_job"},
-      {l:"Learn or get trained in QA", n:"result_school"}
-    ]},
-    serviceType: { q:"What kind of testing do you need?", opts:[
-      {l:"Manual Testing", n:"result_manual"},
-      {l:"Automation Testing", n:"result_automation"},
-      {l:"API Testing", n:"result_api"},
-      {l:"Non-Functional / Security Testing", n:"result_nonfunc"},
-      {l:"USSD Testing", n:"result_ussd"},
-      {l:"Not sure — talk to someone", n:"result_consult"}
-    ]},
-
-    result_hire:{r:true,t:"Hire a Talent",s:"",d:"Tell us what kind of QA professional you need and we'll match you with vetted, ISTQB-certified talent ready to plug into your team.",link:"careers.html#hire"},
-    result_job:{r:true,t:"Browse QA Roles",s:"",d:"Explore open QA roles or join our talent network so we can match you with the right opportunity.",link:"careers.html#apply"},
-    result_school:{r:true,t:"Kiwami School",s:"Training & Certification",d:"From beginner-friendly intro courses to advanced ISTQB and automation tracks — Kiwami School has a path for every QA career stage.",link:"https://kiwamitech.com/school/"},
-    result_manual:{r:true,t:"Manual Testing",s:"",d:"Our experienced testers meticulously assess software functionality and performance using industry-standard techniques.",link:"services.html#manual"},
-    result_automation:{r:true,t:"Automation Testing",s:"",d:"We build reliable automation suites using Selenium, Playwright, Robot Framework, Cypress and more.",link:"services.html#automation"},
-    result_api:{r:true,t:"API Testing",s:"",d:"We examine the functionality, reliability, and performance of your APIs using advanced tools and methodologies.",link:"services.html#api"},
-    result_nonfunc:{r:true,t:"Non-Functional & Security Testing",s:"",d:"From load and performance testing to vulnerability scanning and penetration testing, we safeguard your systems end-to-end.",link:"services.html#nonfunctional"},
-    result_ussd:{r:true,t:"USSD Testing",s:"",d:"We rigorously test USSD-based applications across all major East African telecom networks.",link:"services.html#ussd"},
-    result_consult:{r:true,t:"Request Consultancy Services",s:"",d:"Not sure what you need yet? Reach out and our team will help you figure out the right testing approach for your project.",link:"index.html#contact"}
-  };
-
-  let history = [];
-  let current = "start";
-  const totalSteps = 2;
-
-  function render(){
-    const card = document.getElementById('cfCard');
-    const node = tree[current];
-
-    if(node.r){
-      card.innerHTML = `
-        <div class="cf-result">
-          <div class="cf-badge">Recommended For You</div>
-          <h2>${node.t}</h2>
-          ${node.s ? `<div class="sub">${node.s}</div>` : ''}
-          <p>${node.d}</p>
-          <div class="cf-result-btns">
-            <a class="cf-btn-gold" href="${node.link}">Get Started →</a>
-            <a class="cf-btn-ghost" href="${WA_LINK}" target="_blank">Chat on WhatsApp</a>
-          </div>
-          <button class="cf-restart" onclick="cfRestart()">↺ Start Over</button>
-        </div>`;
-      return;
-    }
-
-    const stepNum = history.length + 1;
-    let dots = '';
-    for(let i=0;i<totalSteps;i++){
-      dots += `<div class="cf-dot ${i < stepNum ? 'done' : ''}"><span></span></div>`;
-    }
-    let opts = '';
-    node.opts.forEach(o=>{
-      opts += `<button class="cf-opt" onclick="cfChoose('${o.n}')">${o.l}<span class="go">→</span></button>`;
-    });
-
-    card.innerHTML = `
-      <div class="cf-eyebrow"><span class="cf-eyebrow-dot"></span>Find What You Need</div>
-      <div class="cf-progress">${dots}</div>
-      <div class="cf-step-lbl">Question ${stepNum}</div>
-      <div class="cf-q">${node.q}</div>
-      <div class="cf-opts">${opts}</div>
-      ${history.length ? `<button class="cf-back" onclick="cfBack()">← Back</button>` : ''}
-    `;
-  }
-
-  window.cfChoose = function(next){ history.push(current); current = next; render(); };
-  window.cfBack = function(){ current = history.pop(); render(); };
-  window.cfRestart = function(){ history = []; current = "start"; render(); };
-
-  window.cfClose = function(){
-    document.getElementById('cfOverlay').classList.remove('show');
-    document.body.style.overflow = '';
-  };
-
-  function cfOpen(){
-    document.getElementById('cfOverlay').classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-
-  window.cfReopenManual = function(){
-    history = [];
-    current = "start";
-    render();
-    cfOpen();
-  };
-
-  document.getElementById('cfOverlay').addEventListener('click', function(e){
-    if(e.target.id === 'cfOverlay') window.cfClose();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') window.cfClose();
-  });
-
-  render();
-})();
-// ══════════════ SERVICE FINDER POPUP LOGIC ══════════════
-(function(){
-  const WA_LINK = "https://wa.me/254110436849";
-
-  const tree = {
-    start: { q:"What are you looking for today?", opts:[
-      {l:"Hire QA talent for my team", n:"result_hire"},
-      {l:"Get my software tested", n:"serviceType"},
-      {l:"Find a QA job", n:"result_job"},
-      {l:"Learn or get trained in QA", n:"result_school"}
-    ]},
-    serviceType: { q:"What kind of testing do you need?", opts:[
-      {l:"Manual Testing", n:"result_manual"},
-      {l:"Automation Testing", n:"result_automation"},
-      {l:"API Testing", n:"result_api"},
-      {l:"Non-Functional / Security Testing", n:"result_nonfunc"},
-      {l:"USSD Testing", n:"result_ussd"},
-      {l:"Not sure — talk to someone", n:"result_consult"}
-    ]},
-
-    result_hire:{r:true,t:"Hire a Talent",s:"",d:"Tell us what kind of QA professional you need and we'll match you with vetted, ISTQB-certified talent ready to plug into your team.",link:"careers.html#hire"},
-    result_job:{r:true,t:"Browse QA Roles",s:"",d:"Explore open QA roles or join our talent network so we can match you with the right opportunity.",link:"careers.html#apply"},
-    result_school:{r:true,t:"Kiwami School",s:"Training & Certification",d:"From beginner-friendly intro courses to advanced ISTQB and automation tracks — Kiwami School has a path for every QA career stage.",link:"https://kiwamitech.com/school/"},
-    result_manual:{r:true,t:"Manual Testing",s:"",d:"Our experienced testers meticulously assess software functionality and performance using industry-standard techniques.",link:"services.html#manual"},
-    result_automation:{r:true,t:"Automation Testing",s:"",d:"We build reliable automation suites using Selenium, Playwright, Robot Framework, Cypress and more.",link:"services.html#automation"},
-    result_api:{r:true,t:"API Testing",s:"",d:"We examine the functionality, reliability, and performance of your APIs using advanced tools and methodologies.",link:"services.html#api"},
-    result_nonfunc:{r:true,t:"Non-Functional & Security Testing",s:"",d:"From load and performance testing to vulnerability scanning and penetration testing, we safeguard your systems end-to-end.",link:"services.html#nonfunctional"},
-    result_ussd:{r:true,t:"USSD Testing",s:"",d:"We rigorously test USSD-based applications across all major East African telecom networks.",link:"services.html#ussd"},
-    result_consult:{r:true,t:"Request Consultancy Services",s:"",d:"Not sure what you need yet? Reach out and our team will help you figure out the right testing approach for your project.",link:"index.html#contact"}
-  };
-
-  let history = [];
-  let current = "start";
-  const totalSteps = 2;
-
-  function render(){
-    const card = document.getElementById('cfCard');
-    const node = tree[current];
-
-    if(node.r){
-      card.innerHTML = `
-        <div class="cf-result">
-          <div class="cf-badge">Recommended For You</div>
-          <h2>${node.t}</h2>
-          ${node.s ? `<div class="sub">${node.s}</div>` : ''}
-          <p>${node.d}</p>
-          <div class="cf-result-btns">
-            <a class="cf-btn-gold" href="${node.link}">Get Started →</a>
-            <a class="cf-btn-ghost" href="${WA_LINK}" target="_blank">Chat on WhatsApp</a>
-          </div>
-          <button class="cf-restart" onclick="cfRestart()">↺ Start Over</button>
-        </div>`;
-      return;
-    }
-
-    const stepNum = history.length + 1;
-    let dots = '';
-    for(let i=0;i<totalSteps;i++){
-      dots += `<div class="cf-dot ${i < stepNum ? 'done' : ''}"><span></span></div>`;
-    }
-    let opts = '';
-    node.opts.forEach(o=>{
-      opts += `<button class="cf-opt" onclick="cfChoose('${o.n}')">${o.l}<span class="go">→</span></button>`;
-    });
-
-    card.innerHTML = `
-      <div class="cf-eyebrow"><span class="cf-eyebrow-dot"></span>Find What You Need</div>
-      <div class="cf-progress">${dots}</div>
-      <div class="cf-step-lbl">Question ${stepNum}</div>
-      <div class="cf-q">${node.q}</div>
-      <div class="cf-opts">${opts}</div>
-      ${history.length ? `<button class="cf-back" onclick="cfBack()">← Back</button>` : ''}
-    `;
-  }
-
-  window.cfChoose = function(next){ history.push(current); current = next; render(); };
-  window.cfBack = function(){ current = history.pop(); render(); };
-  window.cfRestart = function(){ history = []; current = "start"; render(); };
-
-  window.cfClose = function(){
-    document.getElementById('cfOverlay').classList.remove('show');
-    document.body.style.overflow = '';
-  };
-
-  function cfOpen(){
-    document.getElementById('cfOverlay').classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-
-  window.cfReopenManual = function(){
-    history = [];
-    current = "start";
-    render();
-    cfOpen();
-  };
-
-  document.getElementById('cfOverlay').addEventListener('click', function(e){
-    if(e.target.id === 'cfOverlay') window.cfClose();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') window.cfClose();
-  });
-
-  render();
-})();
-
 </script>
-<div class="cf-overlay" id="cfOverlay">
-  <div class="cf-box">
-    <button class="cf-close" onclick="cfClose()" aria-label="Close">✕</button>
-    <div id="cfCard"></div>
-  </div>
-</div>
-
-<button class="cf-reopen" onclick="cfReopenManual()" aria-label="Need help choosing a service?">
-  🤔 <span class="cfr-full">Need help choosing a service?</span><span class="cfr-text">Find My Service</span>
-</button>
-
 </body>
 </html>
